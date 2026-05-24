@@ -243,7 +243,188 @@
     <div id="svc-grid" class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
   </div>
 </section>
-<!-- ============ MÉTHODE ============ -->
+<!-- ============ RÉALISATIONS ============ -->
+<section id="realisations" class="relative py-28 border-t border-stroke">
+  <div class="glow-blob" style="top:160px;right:8%;width:520px;height:420px;background:#7c3bff;opacity:.18"></div>
+
+  <div class="relative mx-auto max-w-7xl px-5">
+    <div class="reveal max-w-2xl">
+      <div class="inline-flex items-center gap-2 text-[13px] text-blue font-600 mb-4">
+        <span class="h-px w-8 bg-blue"></span> RÉALISATIONS
+      </div>
+      <h2 class="font-display font-700 tracking-tight text-[36px] sm:text-[46px] leading-[1.05]">
+        Des concepts qui montrent<br>ce qu'on sait <span class="grad-text">construire.</span>
+      </h2>
+      <p class="mt-5 text-[17px] text-mut leading-relaxed">
+        Des démos conçues pour illustrer notre savoir-faire. Votre projet sera unique, créé sur-mesure.
+      </p>
+    </div>
+
+    <!-- Filtres -->
+    <div id="filters" class="reveal mt-10 flex flex-wrap gap-2.5">
+      <button data-f="all"    class="filter-btn rounded-full px-4 py-2 text-[14px] font-500 bg-white text-ink">Tout</button>
+      <button data-f="ia"     class="filter-btn rounded-full px-4 py-2 text-[14px] font-500 glass text-mut hover:text-white transition">Agents IA</button>
+      <button data-f="saas"   class="filter-btn rounded-full px-4 py-2 text-[14px] font-500 glass text-mut hover:text-white transition">SaaS</button>
+      <button data-f="dash"   class="filter-btn rounded-full px-4 py-2 text-[14px] font-500 glass text-mut hover:text-white transition">Dashboards</button>
+      <button data-f="edu"    class="filter-btn rounded-full px-4 py-2 text-[14px] font-500 glass text-mut hover:text-white transition">Éducatif</button>
+      <button data-f="auto"   class="filter-btn rounded-full px-4 py-2 text-[14px] font-500 glass text-mut hover:text-white transition">Automatisation</button>
+    </div>
+
+    <!-- Grille projets -->
+    <div id="proj-grid" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- 1 — Agent support IA -->
+      <article class="proj reveal svc glass rounded-2xl overflow-hidden" data-cat="ia">
+        <div class="relative h-44 p-4 bg-gradient-to-br from-blue/20 to-violet/10 border-b border-stroke flex flex-col justify-end gap-2">
+          <div class="self-start max-w-[70%] rounded-xl rounded-bl-sm bg-white/10 px-3 py-2 text-[12px]">Comment annuler mon abonnement ?</div>
+          <div class="self-end max-w-[78%] rounded-xl rounded-br-sm bg-gradient-to-br from-blue to-violet px-3 py-2 text-[12px]">Bien sûr ! Voici la marche à suivre…</div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center justify-between">
+            <h3 class="font-display font-600 text-[17px]">Agent support client</h3>
+            <span class="text-[11px] rounded-full glass px-2 py-0.5 text-mut">Concept</span>
+          </div>
+          <p class="text-[13px] text-mut mt-2 leading-relaxed">Répond 24/7, trie les demandes et transmet les cas complexes à l'équipe.</p>
+          <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-mut">
+            <span class="rounded-md bg-white/5 px-2 py-1">LLM</span>
+            <span class="rounded-md bg-white/5 px-2 py-1">RAG</span>
+            <span class="rounded-md bg-white/5 px-2 py-1">Supabase</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 — Dashboard analytics -->
+      <article class="proj reveal svc glass rounded-2xl overflow-hidden" data-cat="dash">
+        <div class="relative h-44 p-4 bg-gradient-to-br from-blue/15 to-violet/15 border-b border-stroke flex items-end gap-1.5">
+          <div class="w-full rounded bg-white/15" style="height:45%"></div>
+          <div class="w-full rounded bg-white/25" style="height:65%"></div>
+          <div class="w-full rounded bg-blue/60" style="height:50%"></div>
+          <div class="w-full rounded bg-blue/80" style="height:82%"></div>
+          <div class="w-full rounded bg-gradient-to-t from-blue to-violet" style="height:100%"></div>
+          <div class="w-full rounded bg-violet/50" style="height:60%"></div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center justify-between">
+            <h3 class="font-display font-600 text-[17px]">Dashboard analytics</h3>
+            <span class="text-[11px] rounded-full glass px-2 py-0.5 text-mut">Concept</span>
+          </div>
+          <p class="text-[13px] text-mut mt-2 leading-relaxed">Pilotage en temps réel : métriques live, filtres et visualisations claires.</p>
+          <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-mut">
+            <span class="rounded-md bg-white/5 px-2 py-1">Realtime</span>
+            <span class="rounded-md bg-white/5 px-2 py-1">Charts</span>
+            <span class="rounded-md bg-white/5 px-2 py-1">Next.js</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 — Plateforme éducative gamifiée -->
+      <article class="proj reveal svc glass rounded-2xl overflow-hidden" data-cat="edu">
+        <div class="relative h-44 p-4 bg-gradient-to-br from-violet/20 to-blue/10 border-b border-stroke flex flex-col justify-center gap-2">
+          <div class="flex items-center gap-2 rounded-lg bg-white/10 px-3 py-1.5 text-[12px]"><span class="grad-text font-700">1</span> Lucas <span class="ml-auto text-mut">2 480 XP</span></div>
+          <div class="flex items-center gap-2 rounded-lg bg-white/5 px-3 py-1.5 text-[12px]"><span class="text-mut font-700">2</span> Emma <span class="ml-auto text-mut">2 190 XP</span></div>
+          <div class="flex items-center gap-2 rounded-lg bg-white/5 px-3 py-1.5 text-[12px]"><span class="text-mut font-700">3</span> Noah <span class="ml-auto text-mut">1 905 XP</span></div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center justify-between">
+            <h3 class="font-display font-600 text-[17px]">Plateforme éducative</h3>
+            <span class="text-[11px] rounded-full glass px-2 py-0.5 text-mut">Concept</span>
+          </div>
+          <p class="text-[13px] text-mut mt-2 leading-relaxed">XP, niveaux et classements en temps réel pour rendre l'apprentissage addictif.</p>
+          <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-mut">
+            <span class="rounded-md bg-white/5 px-2 py-1">Gamification</span>
+            <span class="rounded-md bg-white/5 px-2 py-1">Realtime DB</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4 — SaaS abonnement -->
+      <article class="proj reveal svc glass rounded-2xl overflow-hidden" data-cat="saas">
+        <div class="relative h-44 p-4 bg-gradient-to-br from-blue/15 to-violet/10 border-b border-stroke flex items-center justify-center">
+          <div class="w-full max-w-[200px] rounded-xl glass p-4">
+            <div class="text-[12px] text-mut">Plan Pro</div>
+            <div class="font-display font-700 text-[24px] mt-1">29€<span class="text-[13px] text-mut font-400">/mois</span></div>
+            <div class="mt-3 h-9 rounded-lg bg-gradient-to-r from-blue to-violet grid place-items-center text-[12px] font-600">S'abonner</div>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center justify-between">
+            <h3 class="font-display font-600 text-[17px]">SaaS par abonnement</h3>
+            <span class="text-[11px] rounded-full glass px-2 py-0.5 text-mut">Concept</span>
+          </div>
+          <p class="text-[13px] text-mut mt-2 leading-relaxed">Auth, paiement récurrent Stripe, espace membre et tableau de bord.</p>
+          <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-mut">
+            <span class="rounded-md bg-white/5 px-2 py-1">Stripe</span>
+            <span class="rounded-md bg-white/5 px-2 py-1">Supabase Auth</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5 — Automatisation documents -->
+      <article class="proj reveal svc glass rounded-2xl overflow-hidden" data-cat="auto">
+        <div class="relative h-44 p-4 bg-gradient-to-br from-violet/15 to-blue/15 border-b border-stroke flex items-center justify-center gap-3 text-[11px] text-mut">
+          <div class="rounded-lg glass px-3 py-4 text-center">PDF</div>
+          <svg class="h-5 w-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <div class="rounded-lg glass px-3 py-4 text-center text-white">IA</div>
+          <svg class="h-5 w-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <div class="rounded-lg glass px-3 py-4 text-center">Résumé</div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center justify-between">
+            <h3 class="font-display font-600 text-[17px]">Traitement de documents</h3>
+            <span class="text-[11px] rounded-full glass px-2 py-0.5 text-mut">Concept</span>
+          </div>
+          <p class="text-[13px] text-mut mt-2 leading-relaxed">OCR + IA : lecture, extraction et résumé automatique de vos fichiers.</p>
+          <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-mut">
+            <span class="rounded-md bg-white/5 px-2 py-1">OCR</span>
+            <span class="rounded-md bg-white/5 px-2 py-1">LLM</span>
+            <span class="rounded-md bg-white/5 px-2 py-1">API</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6 — CRM / espace membre -->
+      <article class="proj reveal svc glass rounded-2xl overflow-hidden" data-cat="saas">
+        <div class="relative h-44 p-3 bg-gradient-to-br from-blue/15 to-violet/10 border-b border-stroke">
+          <div class="rounded-lg glass h-full p-3 space-y-2">
+            <div class="flex items-center gap-2 text-[11px]"><span class="h-6 w-6 rounded-full bg-gradient-to-br from-blue to-violet"></span> Client A <span class="ml-auto text-green-400">Actif</span></div>
+            <div class="flex items-center gap-2 text-[11px]"><span class="h-6 w-6 rounded-full bg-white/15"></span> Client B <span class="ml-auto text-mut">En attente</span></div>
+            <div class="flex items-center gap-2 text-[11px]"><span class="h-6 w-6 rounded-full bg-white/15"></span> Client C <span class="ml-auto text-green-400">Actif</span></div>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center justify-between">
+            <h3 class="font-display font-600 text-[17px]">CRM & espace membre</h3>
+            <span class="text-[11px] rounded-full glass px-2 py-0.5 text-mut">Concept</span>
+          </div>
+          <p class="text-[13px] text-mut mt-2 leading-relaxed">Gestion des utilisateurs, rôles, statuts et données centralisées.</p>
+          <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-mut">
+            <span class="rounded-md bg-white/5 px-2 py-1">Rôles</span>
+            <span class="rounded-md bg-white/5 px-2 py-1">Supabase</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const btns = document.querySelectorAll('#filters .filter-btn');
+      const cards = document.querySelectorAll('#proj-grid .proj');
+      btns.forEach(b => b.addEventListener('click', () => {
+        btns.forEach(x => { x.classList.remove('bg-white','text-ink'); x.classList.add('glass','text-mut'); });
+        b.classList.add('bg-white','text-ink'); b.classList.remove('glass','text-mut');
+        const f = b.dataset.f;
+        cards.forEach(c => {
+          const show = f === 'all' || c.dataset.cat === f;
+          c.style.display = show ? '' : 'none';
+        });
+      }));
+    })();
+  </script>
+</section>
+
+  <!-- ============ MÉTHODE ============ -->
 <section id="methode" class="relative py-28 border-t border-stroke">
   <div class="glow-blob" style="top:120px;left:10%;width:480px;height:380px;background:#3b5bff;opacity:.18"></div>
 
