@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VeloraX Labs — Agents IA & SaaS sur-mesure</title>
+<meta name="description" content="VeloraX Labs conçoit des agents IA et des SaaS sur-mesure : automatisations, dashboards temps réel, espaces membres. Du code propre, zéro template." />
+
+<meta property="og:title" content="VeloraX Labs — Agents IA & SaaS sur-mesure" />
+<meta property="og:description" content="On construit des agents IA et des plateformes sur-mesure, modernes et rapides." />
+<meta property="og:type" content="website" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      fontFamily: { display:['Sora','sans-serif'], body:['Manrope','sans-serif'] },
+      colors: { ink:'#06060a', panel:'#0d0d14', stroke:'rgba(255,255,255,0.08)', blue:'#5b8cff', violet:'#a16bff', mut:'#8b8b9c' },
+    } },
+  };
+</script>
+
+<style>
+  html { scroll-behavior:smooth; }
+  body { background:#06060a; }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+            mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  }
+  .glow-blob { position:absolute; border-radius:9999px; filter:blur(120px); opacity:.5; pointer-events:none; }
+
+  #cursor-glow {
+    position:fixed; top:0; left:0; width:480px; height:480px; border-radius:9999px;
+    background:radial-gradient(circle, rgba(91,140,255,.14), transparent 60%);
+    transform:translate(-50%,-50%); pointer-events:none; z-index:0; transition:opacity .3s; opacity:0;
+  }
+
+  .grad-text { background:linear-gradient(110deg,#5b8cff 0%,#a16bff 55%,#e0c6ff 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+  .glass { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(12px); }
+
+  .btn-glow { position:relative; box-shadow:0 0 0 1px rgba(255,255,255,.06), 0 18px 40px -18px rgba(91,140,255,.7); }
+  .btn-glow::after { content:''; position:absolute; inset:0; border-radius:inherit; background:linear-gradient(110deg,#5b8cff,#a16bff); opacity:0; transition:opacity .35s; z-index:-1; filter:blur(14px); }
+  .btn-glow:hover::after { opacity:.9; }
+
+  .reveal { opacity:0; transform:translateY(28px); transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity:1; transform:none; }
+
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+  .float { animation:float 7s ease-in-out infinite; }
+  @keyframes floatB { 0%,100%{transform:translateY(0)} 50%{transform:translateY(12px)} }
+  .floatB { animation:floatB 6s ease-in-out infinite; }
+
+  .svc { position:relative; transition:transform .4s cubic-bezier(.2,.7,.2,1), background .4s; }
+  .svc::before { content:''; position:absolute; inset:0; border-radius:1rem; padding:1px; background:linear-gradient(130deg, rgba(91,140,255,.6), rgba(161,107,255,.5), transparent 60%); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; opacity:0; transition:opacity .4s; }
+  .svc:hover { transform:translateY(-6px); background:rgba(255,255,255,.035); }
+  .svc:hover::before { opacity:1; }
+
+  @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  .marquee-track { animation:marquee 32s linear infinite; }
+
+  /* indicateur de frappe */
+  .dot { width:6px; height:6px; border-radius:9999px; background:#8b8b9c; display:inline-block; animation:blink 1.4s infinite both; }
+  .dot:nth-child(2){ animation-delay:.2s } .dot:nth-child(3){ animation-delay:.4s }
+  @keyframes blink { 0%,80%,100%{opacity:.2} 40%{opacity:1} }
+
+  ::selection { background:rgba(161,107,255,.35); }
+</style>
+</head>
+
+<body class="bg-ink text-white font-body antialiased overflow-x-hidden">
+
+<div id="cursor-glow"></div>
+
+<!-- ============ NAV ============ -->
+<header class="fixed top-0 inset-x-0 z-50">
+  <div class="mx-auto max-w-7xl px-5">
+    <nav class="mt-4 flex items-center justify-between rounded-2xl glass px-4 py-3">
+      <a href="#" class="flex items-center gap-2.5 group">
+        <span class="relative grid place-items-center h-9 w-9 rounded-xl bg-gradient-to-br from-blue to-violet">
+          <span class="absolute inset-0 rounded-xl blur-md bg-gradient-to-br from-blue to-violet opacity-60 group-hover:opacity-100 transition"></span>
+          <svg viewBox="0 0 24 24" class="relative h-5 w-5 text-white" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l8 16 8-16"/></svg>
+        </span>
+        <span class="font-display font-700 tracking-tight text-[17px]">VeloraX<span class="text-mut font-500"> Labs</span></span>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-1 text-[14px] text-mut">
+        <li><a href="#services" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition">Services</a></li>
+        <li><a href="#" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition">Réalisations</a></li>
+        <li><a href="#" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition">Méthode</a></li>
+        <li><a href="#" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition">Tarifs</a></li>
+        <li><a href="#" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition">Blog</a></li>
+      </ul>
+
+      <div class="flex items-center gap-2">
+        <a href="#" class="btn-glow inline-flex items-center gap-1.5 rounded-xl bg-white text-ink font-600 text-[14px] px-4 py-2.5">
+          Réserver un appel
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <button id="burger" class="md:hidden grid place-items-center h-10 w-10 rounded-xl glass" aria-label="Menu">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="md:hidden hidden mt-2 rounded-2xl glass p-3 text-[15px]">
+      <a href="#services" class="block px-3 py-3 rounded-lg hover:bg-white/5">Services</a>
+      <a href="#" class="block px-3 py-3 rounded-lg hover:bg-white/5">Réalisations</a>
+      <a href="#" class="block px-3 py-3 rounded-lg hover:bg-white/5">Méthode</a>
+      <a href="#" class="block px-3 py-3 rounded-lg hover:bg-white/5">Tarifs</a>
+      <a href="#" class="block px-3 py-3 rounded-lg hover:bg-white/5">Blog</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
+  <div class="absolute inset-0 bg-grid"></div>
+  <div class="glow-blob" style="top:-120px;left:8%;width:520px;height:520px;background:#3b5bff"></div>
+  <div class="glow-blob" style="top:120px;right:0;width:560px;height:560px;background:#7c3bff"></div>
+  <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink to-transparent"></div>
+
+  <div class="relative mx-auto max-w-7xl px-5 grid lg:grid-cols-[1.05fr_1fr] gap-14 items-center w-full">
+
+    <div>
+      <div class="reveal inline-flex items-center gap-2 rounded-full glass px-3.5 py-1.5 text-[13px] text-mut">
+        <span class="h-1.5 w-1.5 rounded-full bg-blue animate-pulse"></span>
+        Studio Agents IA &amp; SaaS sur-mesure
+      </div>
+
+      <h1 class="reveal font-display font-800 tracking-tight leading-[1.03] mt-6 text-[42px] sm:text-[56px] lg:text-[64px]">
+        On construit des<br>
+        <span class="grad-text">agents IA</span> &amp; des SaaS<br>
+        sur-mesure.
+      </h1>
+
+      <p class="reveal mt-6 max-w-xl text-[17px] sm:text-[18px] text-mut leading-relaxed">
+        Automatisations intelligentes, plateformes en temps réel, espaces membres.
+        On transforme votre idée en produit moderne — du code propre, jamais de template.
+      </p>
+
+      <div class="reveal mt-9 flex flex-wrap items-center gap-3">
+        <a href="#" class="btn-glow inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue to-violet font-600 text-[15px] px-6 py-3.5">
+          Discuter de votre projet
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#services" class="inline-flex items-center gap-2 rounded-xl glass font-600 text-[15px] px-6 py-3.5 hover:bg-white/5 transition">
+          Ce qu'on fait
+        </a>
+      </div>
+
+      <!-- Principes honnêtes (pas de stats inventées) -->
+      <div class="reveal mt-12 flex flex-wrap gap-x-8 gap-y-4 max-w-lg">
+        <div class="flex items-center gap-2.5">
+          <svg class="h-5 w-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          <span class="text-[14px]">100% sur-mesure</span>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <svg class="h-5 w-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+          <span class="text-[14px]">Supabase · LLM · Stripe</span>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <svg class="h-5 w-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg>
+          <span class="text-[14px]">Temps réel</span>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <svg class="h-5 w-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h12"/></svg>
+          <span class="text-[14px]">Devis clair, code livré</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Colonne droite : DÉMO agent IA (effet de frappe) -->
+    <div class="reveal relative">
+      <div class="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-blue/20 to-violet/20 blur-2xl"></div>
+
+      <div class="float relative glass rounded-2xl overflow-hidden shadow-2xl">
+        <div class="flex items-center justify-between px-4 py-3 border-b border-stroke">
+          <div class="flex items-center gap-2.5">
+            <span class="grid place-items-center h-7 w-7 rounded-lg bg-gradient-to-br from-blue to-violet">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="3.2"/></svg>
+            </span>
+            <div>
+              <div class="text-[13px] font-600 leading-tight">Agent VeloraX</div>
+              <div class="text-[11px] text-green-400 flex items-center gap-1"><span class="h-1.5 w-1.5 rounded-full bg-green-400"></span>en ligne</div>
+            </div>
+          </div>
+          <span class="text-[11px] text-mut">démo</span>
+        </div>
+
+        <div id="chat" class="p-4 space-y-3 min-h-[260px] text-[14px]"></div>
+      </div>
+
+      <!-- carte flottante : workflow IA (illustratif, pas de chiffre) -->
+      <div class="floatB absolute -left-6 bottom-6 hidden sm:block glass rounded-xl p-3.5 w-56 shadow-xl">
+        <div class="text-[12px] font-600 mb-2.5 flex items-center gap-1.5">
+          <span class="h-1.5 w-1.5 rounded-full bg-violet"></span> Workflow automatisé
+        </div>
+        <div class="space-y-2 text-[12px] text-mut">
+          <div class="flex items-center gap-2"><span class="grid place-items-center h-5 w-5 rounded bg-blue/20 text-blue text-[10px]">1</span> Message reçu</div>
+          <div class="flex items-center gap-2"><span class="grid place-items-center h-5 w-5 rounded bg-blue/20 text-blue text-[10px]">2</span> Analysé par l'IA</div>
+          <div class="flex items-center gap-2"><span class="grid place-items-center h-5 w-5 rounded bg-gradient-to-br from-blue to-violet text-white text-[10px]">3</span> <span class="text-white">Réponse envoyée</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BANDEAU TAGS ============ -->
+<section class="py-10 border-y border-stroke overflow-hidden">
+  <div class="flex gap-3 marquee-track w-max">
+    <div class="flex gap-3" id="tagset"></div>
+    <div class="flex gap-3" id="tagset2"></div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="relative py-28">
+  <div class="glow-blob" style="top:200px;left:50%;transform:translateX(-50%);width:600px;height:400px;background:#4a3bff;opacity:.25"></div>
+
+  <div class="relative mx-auto max-w-7xl px-5">
+    <div class="reveal max-w-2xl">
+      <div class="inline-flex items-center gap-2 text-[13px] text-blue font-600 mb-4">
+        <span class="h-px w-8 bg-blue"></span> CE QU'ON FAIT
+      </div>
+      <h2 class="font-display font-700 tracking-tight text-[36px] sm:text-[46px] leading-[1.05]">
+        Deux spécialités,<br>un seul <span class="grad-text">standard.</span>
+      </h2>
+      <p class="mt-5 text-[17px] text-mut leading-relaxed">
+        On ne fait pas tout. On fait des agents IA et des SaaS sur-mesure — et on les fait bien.
+      </p>
+    </div>
+
+    <div id="svc-grid" class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-stroke py-10">
+  <div class="mx-auto max-w-7xl px-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-mut">
+    <div class="flex items-center gap-2.5">
+      <span class="grid place-items-center h-7 w-7 rounded-lg bg-gradient-to-br from-blue to-violet">
+        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l8 16 8-16"/></svg>
+      </span>
+      <span class="text-white font-display font-600">VeloraX Labs</span>
+    </div>
+    <p>© 2026 VeloraX Labs — Agents IA &amp; SaaS sur-mesure.</p>
+  </div>
+</footer>
+
+<script>
+  /* Curseur lumineux */
+  const glow = document.getElementById('cursor-glow');
+  window.addEventListener('mousemove', e => { glow.style.opacity=1; glow.style.left=e.clientX+'px'; glow.style.top=e.clientY+'px'; });
+
+  /* Menu mobile */
+  const burger=document.getElementById('burger'), menu=document.getElementById('mobile-menu');
+  burger.addEventListener('click',()=>menu.classList.toggle('hidden'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.add('hidden')));
+
+  /* Reveal au scroll */
+  const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}})},{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4)*0.08+'s';io.observe(el);});
+
+  /* Tags marquee */
+  const tags=['Agents IA','Automatisation','SaaS','Chatbots','Dashboards','Temps réel','Espace membre','Stripe','API IA','Workflows','OCR','Supabase','Notifications','Gamification','SEO'];
+  const pill=t=>'<span class="rounded-full glass px-4 py-2 text-[14px] text-mut whitespace-nowrap">'+t+'</span>';
+  document.getElementById('tagset').innerHTML=tags.map(pill).join('');
+  document.getElementById('tagset2').innerHTML=tags.map(pill).join('');
+
+  /* Cartes services — recentrées IA + SaaS */
+  const services=[
+    {t:'Agents IA',d:'Assistants métiers et chatbots qui répondent, qualifient et trient automatiquement.',tech:'LLM · RAG',icon:'<circle cx="12" cy="12" r="3.2"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/>'},
+    {t:'Automatisations IA',d:'Workflows qui bossent pour vous : emails, résumés, OCR, traitement de documents.',tech:'API · Webhooks',icon:'<path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4"/>'},
+    {t:'SaaS sur-mesure',d:'Plateformes complètes : authentification, paiement, espace membre, tableau de bord.',tech:'Supabase · Stripe',icon:'<rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 9h16M8 13h6"/>'},
+    {t:'Dashboards temps réel',d:'Interfaces de pilotage claires, données live, classements et statistiques.',tech:'Realtime · Charts',icon:'<path d="M4 19V5M4 19h16"/><path d="M8 15l3-4 3 2 4-6"/>'},
+    {t:'Temps réel & gamification',d:'Classements live, XP, niveaux et mécaniques qui rendent un produit addictif.',tech:'Realtime DB',icon:'<path d="M8 21h8M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M5 5H3v2a3 3 0 0 0 2 3M19 5h2v2a3 3 0 0 1-2 3"/>'},
+    {t:'Intégrations & API',d:'On connecte vos outils entre eux et on branche l\u0027IA là où elle fait gagner du temps.',tech:'REST · OpenAI',icon:'<path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/>'},
+  ];
+  const svgWrap=i=>'<svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">'+i+'</svg>';
+  document.getElementById('svc-grid').innerHTML=services.map(s=>`
+    <div class="svc reveal glass rounded-2xl p-6">
+      <span class="grid place-items-center h-12 w-12 rounded-xl bg-gradient-to-br from-blue/20 to-violet/20 text-white border border-stroke">${svgWrap(s.icon)}</span>
+      <h3 class="font-display font-600 text-[19px] mt-5">${s.t}</h3>
+      <p class="text-[14px] text-mut mt-2 leading-relaxed">${s.d}</p>
+      <div class="mt-5 flex items-center justify-between">
+        <span class="text-[12px] text-mut">${s.tech}</span>
+        <span class="inline-flex items-center gap-1 text-[13px] text-white/80 group cursor-pointer">Voir plus
+          <svg class="h-3.5 w-3.5 transition group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </div>
+    </div>`).join('');
+  document.querySelectorAll('#svc-grid .reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*0.08+'s';io.observe(el);});
+
+  /* ===== Démo agent IA : effet de frappe en boucle ===== */
+  const chat=document.getElementById('chat');
+  const script=[
+    {who:'user', text:'Vous pouvez automatiser le support client ?'},
+    {who:'bot',  text:'Oui. On déploie un agent qui répond 24/7, trie les demandes et transmet les cas complexes à votre équipe.'},
+    {who:'user', text:'Et brancher mon Stripe + ma base ?'},
+    {who:'bot',  text:'Absolument — paiement, base de données et notifications, le tout connecté et en temps réel.'},
+  ];
+  const userBubble=t=>'<div class="flex justify-end"><div class="max-w-[80%] rounded-2xl rounded-br-md bg-white/10 px-3.5 py-2.5">'+t+'</div></div>';
+  const botBubble=t=>'<div class="flex justify-start"><div class="max-w-[82%] rounded-2xl rounded-bl-md bg-gradient-to-br from-blue/25 to-violet/20 border border-stroke px-3.5 py-2.5">'+t+'</div></div>';
+  const typing='<div class="flex justify-start"><div class="rounded-2xl rounded-bl-md bg-white/5 border border-stroke px-3.5 py-3"><span class="dot"></span> <span class="dot"></span> <span class="dot"></span></div></div>';
+  const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+
+  async function typeText(el,text){
+    for(let i=0;i<text.length;i++){ el.textContent=text.slice(0,i+1); await sleep(18); }
+  }
+  async function runChat(){
+    while(true){
+      chat.innerHTML='';
+      for(const m of script){
+        if(m.who==='user'){
+          chat.insertAdjacentHTML('beforeend', userBubble(m.text));
+          await sleep(700);
+        } else {
+          chat.insertAdjacentHTML('beforeend', typing);
+          const t=chat.lastElementChild; await sleep(900); t.remove();
+          chat.insertAdjacentHTML('beforeend', botBubble(''));
+          const bubble=chat.lastElementChild.querySelector('div');
+          await typeText(bubble, m.text);
+          await sleep(800);
+        }
+        chat.scrollTop=chat.scrollHeight;
+      }
+      await sleep(2600);
+    }
+  }
+  runChat();
+</script>
+</body>
+</html>
