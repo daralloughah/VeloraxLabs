@@ -1,0 +1,15 @@
+<button onclick="test()">Tester</button>
+<pre id="out"></pre>
+<script>
+async function test() {
+  const r = await fetch("https://valswafwmjbamttogbfe.supabase.co/functions/v1/chat", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer sb_publishable_1ItBgvREHzaGeqxIVM71AQ_qWveBcgr"
+    },
+    body: JSON.stringify({ message: "Bonjour, tu fonctionnes ?" })
+  });
+  document.getElementById("out").textContent = await r.text();
+}
+</script>
