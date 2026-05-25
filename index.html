@@ -4,7 +4,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- ===== SEO de base ===== -->
 <title>VeloraX Labs — Agents IA & SaaS sur-mesure</title>
 <meta name="description" content="VeloraX Labs conçoit des agents IA et des SaaS sur-mesure : automatisations, dashboards temps réel, espaces membres. Du code propre, jamais de template." />
 <meta name="keywords" content="agent IA, chatbot, SaaS sur-mesure, automatisation IA, développement, Supabase, Stripe" />
@@ -13,7 +12,6 @@
 <link rel="canonical" href="https://velorax.io/" />
 <meta name="theme-color" content="#06060a" />
 
-<!-- ===== OpenGraph (Facebook, LinkedIn, WhatsApp) ===== -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="VeloraX Labs" />
 <meta property="og:title" content="VeloraX Labs — Agents IA & SaaS sur-mesure" />
@@ -24,109 +22,73 @@
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 
-<!-- ===== Twitter / X ===== -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="VeloraX Labs — Agents IA & SaaS sur-mesure" />
 <meta name="twitter:description" content="On construit des agents IA et des SaaS sur-mesure, modernes et rapides." />
 <meta name="twitter:image" content="https://velorax.io/og-image.png" />
 
-<!-- ===== Favicon (SVG inline, le logo VeloraX) ===== -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b8cff'/%3E%3Cstop offset='1' stop-color='%23a16bff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='24' height='24' rx='6' fill='%2306060a'/%3E%3Cpath d='M5 5l7 14 7-14' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
 
-<!-- ===== Schema.org (données structurées) ===== -->
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "VeloraX Labs",
-  "url": "https://velorax.io/",
-  "description": "Studio spécialisé en agents IA et SaaS sur-mesure.",
-  "email": "contact@velorax.io",
-  "sameAs": [
-    "https://www.linkedin.com/",
-    "https://x.com/"
-  ],
-  "makesOffer": [
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Développement d'agents IA" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatisations IA" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SaaS sur-mesure" } }
-  ]
-}
+{ "@context":"https://schema.org","@type":"Organization","name":"VeloraX Labs","url":"https://velorax.io/","description":"Studio spécialisé en agents IA et SaaS sur-mesure.","email":"contact@velorax.io",
+  "makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Développement d'agents IA"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Automatisations IA"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"SaaS sur-mesure"}}] }
 </script>
 
-<!-- ===== Styles & fonts ===== -->
 <script src="https://cdn.tailwindcss.com"></script>
+<!-- Spline (nébuleuse 3D) -->
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.95/build/spline-viewer.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <script>
-  tailwind.config = {
-    theme: { extend: {
-      fontFamily: { display:['Sora','sans-serif'], body:['Manrope','sans-serif'] },
-      colors: { ink:'#06060a', panel:'#0d0d14', stroke:'rgba(255,255,255,0.08)', blue:'#5b8cff', violet:'#a16bff', mut:'#8b8b9c' },
-    } },
-  };
+  tailwind.config = { theme: { extend: {
+    fontFamily: { display:['Sora','sans-serif'], body:['Manrope','sans-serif'] },
+    colors: { ink:'#06060a', panel:'#0d0d14', stroke:'rgba(255,255,255,0.08)', blue:'#5b8cff', violet:'#a16bff', mut:'#8b8b9c' },
+  } } };
 </script>
 
 <style>
   html { scroll-behavior:smooth; }
   body { background:#06060a; }
-
-  .bg-grid {
-    background-image:
-      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-    background-size:64px 64px;
-    -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
-            mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
-  }
+  section[id] { scroll-margin-top:90px; }
+  .bg-grid { background-image:linear-gradient(rgba(255,255,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.035) 1px,transparent 1px); background-size:64px 64px; -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 40%,transparent 100%); mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 40%,transparent 100%); }
   .glow-blob { position:absolute; border-radius:9999px; filter:blur(120px); opacity:.5; pointer-events:none; }
-
-  #cursor-glow {
-    position:fixed; top:0; left:0; width:480px; height:480px; border-radius:9999px;
-    background:radial-gradient(circle, rgba(91,140,255,.14), transparent 60%);
-    transform:translate(-50%,-50%); pointer-events:none; z-index:0; transition:opacity .3s; opacity:0;
-  }
-
+  #cursor-glow { position:fixed; top:0; left:0; width:480px; height:480px; border-radius:9999px; background:radial-gradient(circle,rgba(91,140,255,.14),transparent 60%); transform:translate(-50%,-50%); pointer-events:none; z-index:0; transition:opacity .3s; opacity:0; }
   .grad-text { background:linear-gradient(110deg,#5b8cff 0%,#a16bff 55%,#e0c6ff 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
-
   .glass { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(12px); }
-
-  .btn-glow { position:relative; box-shadow:0 0 0 1px rgba(255,255,255,.06), 0 18px 40px -18px rgba(91,140,255,.7); }
+  .btn-glow { position:relative; box-shadow:0 0 0 1px rgba(255,255,255,.06),0 18px 40px -18px rgba(91,140,255,.7); }
   .btn-glow::after { content:''; position:absolute; inset:0; border-radius:inherit; background:linear-gradient(110deg,#5b8cff,#a16bff); opacity:0; transition:opacity .35s; z-index:-1; filter:blur(14px); }
   .btn-glow:hover::after { opacity:.9; }
-
-  .reveal { opacity:0; transform:translateY(28px); transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+  .reveal { opacity:0; transform:translateY(28px); transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1); }
   .reveal.in { opacity:1; transform:none; }
-
   @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
   .float { animation:float 7s ease-in-out infinite; }
   @keyframes floatB { 0%,100%{transform:translateY(0)} 50%{transform:translateY(12px)} }
   .floatB { animation:floatB 6s ease-in-out infinite; }
-
-  .svc { position:relative; transition:transform .4s cubic-bezier(.2,.7,.2,1), background .4s; }
-  .svc::before { content:''; position:absolute; inset:0; border-radius:1rem; padding:1px; background:linear-gradient(130deg, rgba(91,140,255,.6), rgba(161,107,255,.5), transparent 60%); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; opacity:0; transition:opacity .4s; }
+  .svc { position:relative; transition:transform .4s cubic-bezier(.2,.7,.2,1),background .4s; }
+  .svc::before { content:''; position:absolute; inset:0; border-radius:1rem; padding:1px; background:linear-gradient(130deg,rgba(91,140,255,.6),rgba(161,107,255,.5),transparent 60%); -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; opacity:0; transition:opacity .4s; }
   .svc:hover { transform:translateY(-6px); background:rgba(255,255,255,.035); }
   .svc:hover::before { opacity:1; }
-
   @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
   .marquee-track { animation:marquee 32s linear infinite; }
-
   .dot { width:6px; height:6px; border-radius:9999px; background:#8b8b9c; display:inline-block; animation:blink 1.4s infinite both; }
-  .dot:nth-child(2){ animation-delay:.2s } .dot:nth-child(3){ animation-delay:.4s }
+  .dot:nth-child(2){animation-delay:.2s} .dot:nth-child(3){animation-delay:.4s}
   @keyframes blink { 0%,80%,100%{opacity:.2} 40%{opacity:1} }
-spline-viewer { width:100%; height:100%; display:block; }
+  .field { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.1); border-radius:.75rem; padding:.75rem 1rem; width:100%; color:#fff; font-size:14px; outline:none; transition:border .2s; }
+  .field:focus { border-color:#5b8cff; }
+  .field::placeholder { color:#8b8b9c; }
+  select.field option { background:#0d0d14; }
+  /* Spline viewer : taille forcée sinon invisible */
+  spline-viewer { width:100%; height:100%; display:block; }
   ::selection { background:rgba(161,107,255,.35); }
 </style>
 </head>
 
-
 <body class="bg-ink text-white font-body antialiased overflow-x-hidden">
-
 <div id="cursor-glow"></div>
 
-<!-- ============ NAV ============ -->
+<!-- NAV -->
 <header class="fixed top-0 inset-x-0 z-50">
   <div class="mx-auto max-w-7xl px-5">
     <nav class="mt-4 flex items-center justify-between rounded-2xl glass px-4 py-3">
@@ -137,17 +99,15 @@ spline-viewer { width:100%; height:100%; display:block; }
         </span>
         <span class="font-display font-700 tracking-tight text-[17px]">VeloraX<span class="text-mut font-500"> Labs</span></span>
       </a>
-
       <ul class="hidden md:flex items-center gap-1 text-[14px] text-mut">
         <li><a href="#services" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition">Services</a></li>
-        <li><a href="#" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition">Réalisations</a></li>
-        <li><a href="#" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition">Méthode</a></li>
-        <li><a href="#" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition">Tarifs</a></li>
-        <li><a href="#" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition">Blog</a></li>
+        <li><a href="#realisations" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition">Réalisations</a></li>
+        <li><a href="#methode" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition">Méthode</a></li>
+        <li><a href="#tarifs" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition">Tarifs</a></li>
+        <li><a href="#faq" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition">FAQ</a></li>
       </ul>
-
       <div class="flex items-center gap-2">
-        <a href="#" class="btn-glow inline-flex items-center gap-1.5 rounded-xl bg-white text-ink font-600 text-[14px] px-4 py-2.5">
+        <a href="#contact" class="btn-glow inline-flex items-center gap-1.5 rounded-xl bg-white text-ink font-600 text-[14px] px-4 py-2.5">
           Réserver un appel
           <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -156,105 +116,66 @@ spline-viewer { width:100%; height:100%; display:block; }
         </button>
       </div>
     </nav>
-
     <div id="mobile-menu" class="md:hidden hidden mt-2 rounded-2xl glass p-3 text-[15px]">
       <a href="#services" class="block px-3 py-3 rounded-lg hover:bg-white/5">Services</a>
-      <a href="#" class="block px-3 py-3 rounded-lg hover:bg-white/5">Réalisations</a>
-      <a href="#" class="block px-3 py-3 rounded-lg hover:bg-white/5">Méthode</a>
-      <a href="#" class="block px-3 py-3 rounded-lg hover:bg-white/5">Tarifs</a>
-      <a href="#" class="block px-3 py-3 rounded-lg hover:bg-white/5">Blog</a>
+      <a href="#realisations" class="block px-3 py-3 rounded-lg hover:bg-white/5">Réalisations</a>
+      <a href="#methode" class="block px-3 py-3 rounded-lg hover:bg-white/5">Méthode</a>
+      <a href="#tarifs" class="block px-3 py-3 rounded-lg hover:bg-white/5">Tarifs</a>
+      <a href="#faq" class="block px-3 py-3 rounded-lg hover:bg-white/5">FAQ</a>
+      <a href="#contact" class="block px-3 py-3 rounded-lg hover:bg-white/5">Contact</a>
     </div>
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
+<!-- HERO -->
 <section class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
-  <!-- fond Spline (desktop uniquement) -->
-  <div id="spline-bg" class="absolute inset-0 hidden lg:block pointer-events-none opacity-70">
-    <spline-viewer url="https://prod.spline.design/hrOEwKLPkdRdKpW8/scene.splinecode" loading="lazy"></spline-viewer>
+  <!-- fond nébuleuse Spline (visible partout) -->
+  <div id="spline-bg" class="absolute inset-0 z-0 pointer-events-none opacity-60">
+    <spline-viewer url="https://prod.spline.design/hrOEwKLPkdRdKpW8/scene.splinecode"></spline-viewer>
   </div>
-  <!-- fond de secours (mobile + pendant le chargement) -->
-  <div class="absolute inset-0 bg-grid lg:opacity-30"></div>
-  <div class="glow-blob lg:hidden" style="top:-120px;left:8%;width:520px;height:520px;background:#3b5bff"></div>
-  <div class="glow-blob lg:hidden" style="top:120px;right:0;width:560px;height:560px;background:#7c3bff"></div>
-  <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink to-transparent"></div>
+  <!-- grille légère + dégradé pour la lisibilité du texte -->
+  <div class="absolute inset-0 z-0 bg-grid opacity-25"></div>
+  <div class="absolute inset-x-0 bottom-0 z-0 h-40 bg-gradient-to-t from-ink to-transparent"></div>
 
-  <div class="relative mx-auto max-w-7xl px-5 grid lg:grid-cols-[1.05fr_1fr] gap-14 items-center w-full">
-
+  <div class="relative z-10 mx-auto max-w-7xl px-5 grid lg:grid-cols-[1.05fr_1fr] gap-14 items-center w-full">
     <div>
       <div class="reveal inline-flex items-center gap-2 rounded-full glass px-3.5 py-1.5 text-[13px] text-mut">
-        <span class="h-1.5 w-1.5 rounded-full bg-blue animate-pulse"></span>
-        Studio Agents IA &amp; SaaS sur-mesure
+        <span class="h-1.5 w-1.5 rounded-full bg-blue animate-pulse"></span> Studio Agents IA &amp; SaaS sur-mesure
       </div>
-
       <h1 class="reveal font-display font-800 tracking-tight leading-[1.03] mt-6 text-[42px] sm:text-[56px] lg:text-[64px]">
-        On construit des<br>
-        <span class="grad-text">agents IA</span> &amp; des SaaS<br>
-        sur-mesure.
+        On construit des<br><span class="grad-text">agents IA</span> &amp; des SaaS<br>sur-mesure.
       </h1>
-
       <p class="reveal mt-6 max-w-xl text-[17px] sm:text-[18px] text-mut leading-relaxed">
-        Automatisations intelligentes, plateformes en temps réel, espaces membres.
-        On transforme votre idée en produit moderne — du code propre, jamais de template.
+        Automatisations intelligentes, plateformes en temps réel, espaces membres. On transforme votre idée en produit moderne — du code propre, jamais de template.
       </p>
-
       <div class="reveal mt-9 flex flex-wrap items-center gap-3">
-        <a href="#" class="btn-glow inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue to-violet font-600 text-[15px] px-6 py-3.5">
+        <a href="#contact" class="btn-glow inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue to-violet font-600 text-[15px] px-6 py-3.5">
           Discuter de votre projet
           <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="#services" class="inline-flex items-center gap-2 rounded-xl glass font-600 text-[15px] px-6 py-3.5 hover:bg-white/5 transition">
-          Ce qu'on fait
-        </a>
+        <a href="#services" class="inline-flex items-center gap-2 rounded-xl glass font-600 text-[15px] px-6 py-3.5 hover:bg-white/5 transition">Ce qu'on fait</a>
       </div>
-
-      <!-- Principes honnêtes (pas de stats inventées) -->
       <div class="reveal mt-12 flex flex-wrap gap-x-8 gap-y-4 max-w-lg">
-        <div class="flex items-center gap-2.5">
-          <svg class="h-5 w-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          <span class="text-[14px]">100% sur-mesure</span>
-        </div>
-        <div class="flex items-center gap-2.5">
-          <svg class="h-5 w-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
-          <span class="text-[14px]">Supabase · LLM · Stripe</span>
-        </div>
-        <div class="flex items-center gap-2.5">
-          <svg class="h-5 w-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg>
-          <span class="text-[14px]">Temps réel</span>
-        </div>
-        <div class="flex items-center gap-2.5">
-          <svg class="h-5 w-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h12"/></svg>
-          <span class="text-[14px]">Devis clair, code livré</span>
-        </div>
+        <div class="flex items-center gap-2.5"><svg class="h-5 w-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span class="text-[14px]">100% sur-mesure</span></div>
+        <div class="flex items-center gap-2.5"><svg class="h-5 w-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg><span class="text-[14px]">Supabase · LLM · Stripe</span></div>
+        <div class="flex items-center gap-2.5"><svg class="h-5 w-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg><span class="text-[14px]">Temps réel</span></div>
+        <div class="flex items-center gap-2.5"><svg class="h-5 w-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h12"/></svg><span class="text-[14px]">Devis clair, code livré</span></div>
       </div>
     </div>
-
-    <!-- Colonne droite : DÉMO agent IA (effet de frappe) -->
     <div class="reveal relative">
       <div class="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-blue/20 to-violet/20 blur-2xl"></div>
-
       <div class="float relative glass rounded-2xl overflow-hidden shadow-2xl">
         <div class="flex items-center justify-between px-4 py-3 border-b border-stroke">
           <div class="flex items-center gap-2.5">
-            <span class="grid place-items-center h-7 w-7 rounded-lg bg-gradient-to-br from-blue to-violet">
-              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="3.2"/></svg>
-            </span>
-            <div>
-              <div class="text-[13px] font-600 leading-tight">Agent VeloraX</div>
-              <div class="text-[11px] text-green-400 flex items-center gap-1"><span class="h-1.5 w-1.5 rounded-full bg-green-400"></span>en ligne</div>
-            </div>
+            <span class="grid place-items-center h-7 w-7 rounded-lg bg-gradient-to-br from-blue to-violet"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="3.2"/></svg></span>
+            <div><div class="text-[13px] font-600 leading-tight">Agent VeloraX</div><div class="text-[11px] text-green-400 flex items-center gap-1"><span class="h-1.5 w-1.5 rounded-full bg-green-400"></span>en ligne</div></div>
           </div>
           <span class="text-[11px] text-mut">démo</span>
         </div>
-
         <div id="chat" class="p-4 space-y-3 min-h-[260px] text-[14px]"></div>
       </div>
-
-      <!-- carte flottante : workflow IA (illustratif, pas de chiffre) -->
       <div class="floatB absolute -left-6 bottom-6 hidden sm:block glass rounded-xl p-3.5 w-56 shadow-xl">
-        <div class="text-[12px] font-600 mb-2.5 flex items-center gap-1.5">
-          <span class="h-1.5 w-1.5 rounded-full bg-violet"></span> Workflow automatisé
-        </div>
+        <div class="text-[12px] font-600 mb-2.5 flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-violet"></span> Workflow automatisé</div>
         <div class="space-y-2 text-[12px] text-mut">
           <div class="flex items-center gap-2"><span class="grid place-items-center h-5 w-5 rounded bg-blue/20 text-blue text-[10px]">1</span> Message reçu</div>
           <div class="flex items-center gap-2"><span class="grid place-items-center h-5 w-5 rounded bg-blue/20 text-blue text-[10px]">2</span> Analysé par l'IA</div>
@@ -265,539 +186,248 @@ spline-viewer { width:100%; height:100%; display:block; }
   </div>
 </section>
 
-<!-- ============ BANDEAU TAGS ============ -->
+<!-- TAGS -->
 <section class="py-10 border-y border-stroke overflow-hidden">
-  <div class="flex gap-3 marquee-track w-max">
-    <div class="flex gap-3" id="tagset"></div>
-    <div class="flex gap-3" id="tagset2"></div>
-  </div>
+  <div class="flex gap-3 marquee-track w-max"><div class="flex gap-3" id="tagset"></div><div class="flex gap-3" id="tagset2"></div></div>
 </section>
 
-<!-- ============ SERVICES ============ -->
+<!-- SERVICES -->
 <section id="services" class="relative py-28">
   <div class="glow-blob" style="top:200px;left:50%;transform:translateX(-50%);width:600px;height:400px;background:#4a3bff;opacity:.25"></div>
-
   <div class="relative mx-auto max-w-7xl px-5">
     <div class="reveal max-w-2xl">
-      <div class="inline-flex items-center gap-2 text-[13px] text-blue font-600 mb-4">
-        <span class="h-px w-8 bg-blue"></span> CE QU'ON FAIT
-      </div>
-      <h2 class="font-display font-700 tracking-tight text-[36px] sm:text-[46px] leading-[1.05]">
-        Deux spécialités,<br>un seul <span class="grad-text">standard.</span>
-      </h2>
-      <p class="mt-5 text-[17px] text-mut leading-relaxed">
-        On ne fait pas tout. On fait des agents IA et des SaaS sur-mesure — et on les fait bien.
-      </p>
+      <div class="inline-flex items-center gap-2 text-[13px] text-blue font-600 mb-4"><span class="h-px w-8 bg-blue"></span> CE QU'ON FAIT</div>
+      <h2 class="font-display font-700 tracking-tight text-[36px] sm:text-[46px] leading-[1.05]">Deux spécialités,<br>un seul <span class="grad-text">standard.</span></h2>
+      <p class="mt-5 text-[17px] text-mut leading-relaxed">On ne fait pas tout. On fait des agents IA et des SaaS sur-mesure — et on les fait bien.</p>
     </div>
-
     <div id="svc-grid" class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
   </div>
 </section>
-<!-- ============ RÉALISATIONS ============ -->
+
+<!-- REALISATIONS -->
 <section id="realisations" class="relative py-28 border-t border-stroke">
   <div class="glow-blob" style="top:160px;right:8%;width:520px;height:420px;background:#7c3bff;opacity:.18"></div>
-
   <div class="relative mx-auto max-w-7xl px-5">
     <div class="reveal max-w-2xl">
-      <div class="inline-flex items-center gap-2 text-[13px] text-blue font-600 mb-4">
-        <span class="h-px w-8 bg-blue"></span> RÉALISATIONS
-      </div>
-      <h2 class="font-display font-700 tracking-tight text-[36px] sm:text-[46px] leading-[1.05]">
-        Des concepts qui montrent<br>ce qu'on sait <span class="grad-text">construire.</span>
-      </h2>
-      <p class="mt-5 text-[17px] text-mut leading-relaxed">
-        Des démos conçues pour illustrer notre savoir-faire. Votre projet sera unique, créé sur-mesure.
-      </p>
+      <div class="inline-flex items-center gap-2 text-[13px] text-blue font-600 mb-4"><span class="h-px w-8 bg-blue"></span> RÉALISATIONS</div>
+      <h2 class="font-display font-700 tracking-tight text-[36px] sm:text-[46px] leading-[1.05]">Des concepts qui montrent<br>ce qu'on sait <span class="grad-text">construire.</span></h2>
+      <p class="mt-5 text-[17px] text-mut leading-relaxed">Des démos conçues pour illustrer notre savoir-faire. Votre projet sera unique, créé sur-mesure.</p>
     </div>
-
-    <!-- Filtres -->
     <div id="filters" class="reveal mt-10 flex flex-wrap gap-2.5">
-      <button data-f="all"    class="filter-btn rounded-full px-4 py-2 text-[14px] font-500 bg-white text-ink">Tout</button>
-      <button data-f="ia"     class="filter-btn rounded-full px-4 py-2 text-[14px] font-500 glass text-mut hover:text-white transition">Agents IA</button>
-      <button data-f="saas"   class="filter-btn rounded-full px-4 py-2 text-[14px] font-500 glass text-mut hover:text-white transition">SaaS</button>
-      <button data-f="dash"   class="filter-btn rounded-full px-4 py-2 text-[14px] font-500 glass text-mut hover:text-white transition">Dashboards</button>
-      <button data-f="edu"    class="filter-btn rounded-full px-4 py-2 text-[14px] font-500 glass text-mut hover:text-white transition">Éducatif</button>
-      <button data-f="auto"   class="filter-btn rounded-full px-4 py-2 text-[14px] font-500 glass text-mut hover:text-white transition">Automatisation</button>
+      <button data-f="all" class="filter-btn rounded-full px-4 py-2 text-[14px] font-500 bg-white text-ink">Tout</button>
+      <button data-f="ia" class="filter-btn rounded-full px-4 py-2 text-[14px] font-500 glass text-mut hover:text-white transition">Agents IA</button>
+      <button data-f="saas" class="filter-btn rounded-full px-4 py-2 text-[14px] font-500 glass text-mut hover:text-white transition">SaaS</button>
+      <button data-f="dash" class="filter-btn rounded-full px-4 py-2 text-[14px] font-500 glass text-mut hover:text-white transition">Dashboards</button>
+      <button data-f="edu" class="filter-btn rounded-full px-4 py-2 text-[14px] font-500 glass text-mut hover:text-white transition">Éducatif</button>
+      <button data-f="auto" class="filter-btn rounded-full px-4 py-2 text-[14px] font-500 glass text-mut hover:text-white transition">Automatisation</button>
     </div>
-
-    <!-- Grille projets -->
     <div id="proj-grid" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- 1 — Agent support IA -->
       <article class="proj reveal svc glass rounded-2xl overflow-hidden" data-cat="ia">
         <div class="relative h-44 p-4 bg-gradient-to-br from-blue/20 to-violet/10 border-b border-stroke flex flex-col justify-end gap-2">
           <div class="self-start max-w-[70%] rounded-xl rounded-bl-sm bg-white/10 px-3 py-2 text-[12px]">Comment annuler mon abonnement ?</div>
           <div class="self-end max-w-[78%] rounded-xl rounded-br-sm bg-gradient-to-br from-blue to-violet px-3 py-2 text-[12px]">Bien sûr ! Voici la marche à suivre…</div>
         </div>
-        <div class="p-5">
-          <div class="flex items-center justify-between">
-            <h3 class="font-display font-600 text-[17px]">Agent support client</h3>
-            <span class="text-[11px] rounded-full glass px-2 py-0.5 text-mut">Concept</span>
-          </div>
-          <p class="text-[13px] text-mut mt-2 leading-relaxed">Répond 24/7, trie les demandes et transmet les cas complexes à l'équipe.</p>
-          <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-mut">
-            <span class="rounded-md bg-white/5 px-2 py-1">LLM</span>
-            <span class="rounded-md bg-white/5 px-2 py-1">RAG</span>
-            <span class="rounded-md bg-white/5 px-2 py-1">Supabase</span>
-          </div>
-        </div>
+        <div class="p-5"><div class="flex items-center justify-between"><h3 class="font-display font-600 text-[17px]">Agent support client</h3><span class="text-[11px] rounded-full glass px-2 py-0.5 text-mut">Concept</span></div><p class="text-[13px] text-mut mt-2 leading-relaxed">Répond 24/7, trie les demandes et transmet les cas complexes à l'équipe.</p><div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-mut"><span class="rounded-md bg-white/5 px-2 py-1">LLM</span><span class="rounded-md bg-white/5 px-2 py-1">RAG</span><span class="rounded-md bg-white/5 px-2 py-1">Supabase</span></div></div>
       </article>
-
-      <!-- 2 — Dashboard analytics -->
       <article class="proj reveal svc glass rounded-2xl overflow-hidden" data-cat="dash">
         <div class="relative h-44 p-4 bg-gradient-to-br from-blue/15 to-violet/15 border-b border-stroke flex items-end gap-1.5">
-          <div class="w-full rounded bg-white/15" style="height:45%"></div>
-          <div class="w-full rounded bg-white/25" style="height:65%"></div>
-          <div class="w-full rounded bg-blue/60" style="height:50%"></div>
-          <div class="w-full rounded bg-blue/80" style="height:82%"></div>
-          <div class="w-full rounded bg-gradient-to-t from-blue to-violet" style="height:100%"></div>
-          <div class="w-full rounded bg-violet/50" style="height:60%"></div>
+          <div class="w-full rounded bg-white/15" style="height:45%"></div><div class="w-full rounded bg-white/25" style="height:65%"></div><div class="w-full rounded bg-blue/60" style="height:50%"></div><div class="w-full rounded bg-blue/80" style="height:82%"></div><div class="w-full rounded bg-gradient-to-t from-blue to-violet" style="height:100%"></div><div class="w-full rounded bg-violet/50" style="height:60%"></div>
         </div>
-        <div class="p-5">
-          <div class="flex items-center justify-between">
-            <h3 class="font-display font-600 text-[17px]">Dashboard analytics</h3>
-            <span class="text-[11px] rounded-full glass px-2 py-0.5 text-mut">Concept</span>
-          </div>
-          <p class="text-[13px] text-mut mt-2 leading-relaxed">Pilotage en temps réel : métriques live, filtres et visualisations claires.</p>
-          <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-mut">
-            <span class="rounded-md bg-white/5 px-2 py-1">Realtime</span>
-            <span class="rounded-md bg-white/5 px-2 py-1">Charts</span>
-            <span class="rounded-md bg-white/5 px-2 py-1">Next.js</span>
-          </div>
-        </div>
+        <div class="p-5"><div class="flex items-center justify-between"><h3 class="font-display font-600 text-[17px]">Dashboard analytics</h3><span class="text-[11px] rounded-full glass px-2 py-0.5 text-mut">Concept</span></div><p class="text-[13px] text-mut mt-2 leading-relaxed">Pilotage en temps réel : métriques live, filtres et visualisations claires.</p><div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-mut"><span class="rounded-md bg-white/5 px-2 py-1">Realtime</span><span class="rounded-md bg-white/5 px-2 py-1">Charts</span><span class="rounded-md bg-white/5 px-2 py-1">Next.js</span></div></div>
       </article>
-
-      <!-- 3 — Plateforme éducative gamifiée -->
       <article class="proj reveal svc glass rounded-2xl overflow-hidden" data-cat="edu">
         <div class="relative h-44 p-4 bg-gradient-to-br from-violet/20 to-blue/10 border-b border-stroke flex flex-col justify-center gap-2">
           <div class="flex items-center gap-2 rounded-lg bg-white/10 px-3 py-1.5 text-[12px]"><span class="grad-text font-700">1</span> Lucas <span class="ml-auto text-mut">2 480 XP</span></div>
           <div class="flex items-center gap-2 rounded-lg bg-white/5 px-3 py-1.5 text-[12px]"><span class="text-mut font-700">2</span> Emma <span class="ml-auto text-mut">2 190 XP</span></div>
           <div class="flex items-center gap-2 rounded-lg bg-white/5 px-3 py-1.5 text-[12px]"><span class="text-mut font-700">3</span> Noah <span class="ml-auto text-mut">1 905 XP</span></div>
         </div>
-        <div class="p-5">
-          <div class="flex items-center justify-between">
-            <h3 class="font-display font-600 text-[17px]">Plateforme éducative</h3>
-            <span class="text-[11px] rounded-full glass px-2 py-0.5 text-mut">Concept</span>
-          </div>
-          <p class="text-[13px] text-mut mt-2 leading-relaxed">XP, niveaux et classements en temps réel pour rendre l'apprentissage addictif.</p>
-          <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-mut">
-            <span class="rounded-md bg-white/5 px-2 py-1">Gamification</span>
-            <span class="rounded-md bg-white/5 px-2 py-1">Realtime DB</span>
-          </div>
-        </div>
+        <div class="p-5"><div class="flex items-center justify-between"><h3 class="font-display font-600 text-[17px]">Plateforme éducative</h3><span class="text-[11px] rounded-full glass px-2 py-0.5 text-mut">Concept</span></div><p class="text-[13px] text-mut mt-2 leading-relaxed">XP, niveaux et classements en temps réel pour rendre l'apprentissage addictif.</p><div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-mut"><span class="rounded-md bg-white/5 px-2 py-1">Gamification</span><span class="rounded-md bg-white/5 px-2 py-1">Realtime DB</span></div></div>
       </article>
-
-      <!-- 4 — SaaS abonnement -->
       <article class="proj reveal svc glass rounded-2xl overflow-hidden" data-cat="saas">
         <div class="relative h-44 p-4 bg-gradient-to-br from-blue/15 to-violet/10 border-b border-stroke flex items-center justify-center">
-          <div class="w-full max-w-[200px] rounded-xl glass p-4">
-            <div class="text-[12px] text-mut">Plan Pro</div>
-            <div class="font-display font-700 text-[24px] mt-1">29€<span class="text-[13px] text-mut font-400">/mois</span></div>
-            <div class="mt-3 h-9 rounded-lg bg-gradient-to-r from-blue to-violet grid place-items-center text-[12px] font-600">S'abonner</div>
-          </div>
+          <div class="w-full max-w-[200px] rounded-xl glass p-4"><div class="text-[12px] text-mut">Plan Pro</div><div class="font-display font-700 text-[24px] mt-1">29€<span class="text-[13px] text-mut font-400">/mois</span></div><div class="mt-3 h-9 rounded-lg bg-gradient-to-r from-blue to-violet grid place-items-center text-[12px] font-600">S'abonner</div></div>
         </div>
-        <div class="p-5">
-          <div class="flex items-center justify-between">
-            <h3 class="font-display font-600 text-[17px]">SaaS par abonnement</h3>
-            <span class="text-[11px] rounded-full glass px-2 py-0.5 text-mut">Concept</span>
-          </div>
-          <p class="text-[13px] text-mut mt-2 leading-relaxed">Auth, paiement récurrent Stripe, espace membre et tableau de bord.</p>
-          <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-mut">
-            <span class="rounded-md bg-white/5 px-2 py-1">Stripe</span>
-            <span class="rounded-md bg-white/5 px-2 py-1">Supabase Auth</span>
-          </div>
-        </div>
+        <div class="p-5"><div class="flex items-center justify-between"><h3 class="font-display font-600 text-[17px]">SaaS par abonnement</h3><span class="text-[11px] rounded-full glass px-2 py-0.5 text-mut">Concept</span></div><p class="text-[13px] text-mut mt-2 leading-relaxed">Auth, paiement récurrent Stripe, espace membre et tableau de bord.</p><div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-mut"><span class="rounded-md bg-white/5 px-2 py-1">Stripe</span><span class="rounded-md bg-white/5 px-2 py-1">Supabase Auth</span></div></div>
       </article>
-
-      <!-- 5 — Automatisation documents -->
       <article class="proj reveal svc glass rounded-2xl overflow-hidden" data-cat="auto">
         <div class="relative h-44 p-4 bg-gradient-to-br from-violet/15 to-blue/15 border-b border-stroke flex items-center justify-center gap-3 text-[11px] text-mut">
-          <div class="rounded-lg glass px-3 py-4 text-center">PDF</div>
-          <svg class="h-5 w-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          <div class="rounded-lg glass px-3 py-4 text-center text-white">IA</div>
-          <svg class="h-5 w-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          <div class="rounded-lg glass px-3 py-4 text-center">Résumé</div>
+          <div class="rounded-lg glass px-3 py-4 text-center">PDF</div><svg class="h-5 w-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><div class="rounded-lg glass px-3 py-4 text-center text-white">IA</div><svg class="h-5 w-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><div class="rounded-lg glass px-3 py-4 text-center">Résumé</div>
         </div>
-        <div class="p-5">
-          <div class="flex items-center justify-between">
-            <h3 class="font-display font-600 text-[17px]">Traitement de documents</h3>
-            <span class="text-[11px] rounded-full glass px-2 py-0.5 text-mut">Concept</span>
-          </div>
-          <p class="text-[13px] text-mut mt-2 leading-relaxed">OCR + IA : lecture, extraction et résumé automatique de vos fichiers.</p>
-          <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-mut">
-            <span class="rounded-md bg-white/5 px-2 py-1">OCR</span>
-            <span class="rounded-md bg-white/5 px-2 py-1">LLM</span>
-            <span class="rounded-md bg-white/5 px-2 py-1">API</span>
-          </div>
-        </div>
+        <div class="p-5"><div class="flex items-center justify-between"><h3 class="font-display font-600 text-[17px]">Traitement de documents</h3><span class="text-[11px] rounded-full glass px-2 py-0.5 text-mut">Concept</span></div><p class="text-[13px] text-mut mt-2 leading-relaxed">OCR + IA : lecture, extraction et résumé automatique de vos fichiers.</p><div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-mut"><span class="rounded-md bg-white/5 px-2 py-1">OCR</span><span class="rounded-md bg-white/5 px-2 py-1">LLM</span><span class="rounded-md bg-white/5 px-2 py-1">API</span></div></div>
       </article>
-
-      <!-- 6 — CRM / espace membre -->
       <article class="proj reveal svc glass rounded-2xl overflow-hidden" data-cat="saas">
         <div class="relative h-44 p-3 bg-gradient-to-br from-blue/15 to-violet/10 border-b border-stroke">
-          <div class="rounded-lg glass h-full p-3 space-y-2">
-            <div class="flex items-center gap-2 text-[11px]"><span class="h-6 w-6 rounded-full bg-gradient-to-br from-blue to-violet"></span> Client A <span class="ml-auto text-green-400">Actif</span></div>
-            <div class="flex items-center gap-2 text-[11px]"><span class="h-6 w-6 rounded-full bg-white/15"></span> Client B <span class="ml-auto text-mut">En attente</span></div>
-            <div class="flex items-center gap-2 text-[11px]"><span class="h-6 w-6 rounded-full bg-white/15"></span> Client C <span class="ml-auto text-green-400">Actif</span></div>
-          </div>
+          <div class="rounded-lg glass h-full p-3 space-y-2"><div class="flex items-center gap-2 text-[11px]"><span class="h-6 w-6 rounded-full bg-gradient-to-br from-blue to-violet"></span> Client A <span class="ml-auto text-green-400">Actif</span></div><div class="flex items-center gap-2 text-[11px]"><span class="h-6 w-6 rounded-full bg-white/15"></span> Client B <span class="ml-auto text-mut">En attente</span></div><div class="flex items-center gap-2 text-[11px]"><span class="h-6 w-6 rounded-full bg-white/15"></span> Client C <span class="ml-auto text-green-400">Actif</span></div></div>
         </div>
-        <div class="p-5">
-          <div class="flex items-center justify-between">
-            <h3 class="font-display font-600 text-[17px]">CRM & espace membre</h3>
-            <span class="text-[11px] rounded-full glass px-2 py-0.5 text-mut">Concept</span>
-          </div>
-          <p class="text-[13px] text-mut mt-2 leading-relaxed">Gestion des utilisateurs, rôles, statuts et données centralisées.</p>
-          <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-mut">
-            <span class="rounded-md bg-white/5 px-2 py-1">Rôles</span>
-            <span class="rounded-md bg-white/5 px-2 py-1">Supabase</span>
-          </div>
-        </div>
+        <div class="p-5"><div class="flex items-center justify-between"><h3 class="font-display font-600 text-[17px]">CRM &amp; espace membre</h3><span class="text-[11px] rounded-full glass px-2 py-0.5 text-mut">Concept</span></div><p class="text-[13px] text-mut mt-2 leading-relaxed">Gestion des utilisateurs, rôles, statuts et données centralisées.</p><div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-mut"><span class="rounded-md bg-white/5 px-2 py-1">Rôles</span><span class="rounded-md bg-white/5 px-2 py-1">Supabase</span></div></div>
       </article>
-
     </div>
   </div>
-
-  <script>
-    (function(){
-      const btns = document.querySelectorAll('#filters .filter-btn');
-      const cards = document.querySelectorAll('#proj-grid .proj');
-      btns.forEach(b => b.addEventListener('click', () => {
-        btns.forEach(x => { x.classList.remove('bg-white','text-ink'); x.classList.add('glass','text-mut'); });
-        b.classList.add('bg-white','text-ink'); b.classList.remove('glass','text-mut');
-        const f = b.dataset.f;
-        cards.forEach(c => {
-          const show = f === 'all' || c.dataset.cat === f;
-          c.style.display = show ? '' : 'none';
-        });
-      }));
-    })();
-  </script>
 </section>
 
-  <!-- ============ MÉTHODE ============ -->
+<!-- METHODE -->
 <section id="methode" class="relative py-28 border-t border-stroke">
   <div class="glow-blob" style="top:120px;left:10%;width:480px;height:380px;background:#3b5bff;opacity:.18"></div>
-
   <div class="relative mx-auto max-w-7xl px-5">
     <div class="reveal max-w-2xl">
-      <div class="inline-flex items-center gap-2 text-[13px] text-blue font-600 mb-4">
-        <span class="h-px w-8 bg-blue"></span> NOTRE MÉTHODE
-      </div>
-      <h2 class="font-display font-700 tracking-tight text-[36px] sm:text-[46px] leading-[1.05]">
-        Du brief à la mise en ligne,<br>sans <span class="grad-text">mauvaise surprise.</span>
-      </h2>
-      <p class="mt-5 text-[17px] text-mut leading-relaxed">
-        Un process clair en 5 étapes. Vous savez toujours où on en est et ce qui arrive ensuite.
-      </p>
+      <div class="inline-flex items-center gap-2 text-[13px] text-blue font-600 mb-4"><span class="h-px w-8 bg-blue"></span> NOTRE MÉTHODE</div>
+      <h2 class="font-display font-700 tracking-tight text-[36px] sm:text-[46px] leading-[1.05]">Du brief à la mise en ligne,<br>sans <span class="grad-text">mauvaise surprise.</span></h2>
+      <p class="mt-5 text-[17px] text-mut leading-relaxed">Un process clair en 5 étapes. Vous savez toujours où on en est et ce qui arrive ensuite.</p>
     </div>
-
-    <!-- Timeline -->
     <div class="relative mt-16">
-      <!-- ligne de connexion (desktop) -->
       <div class="hidden lg:block absolute top-6 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
-
       <div class="grid gap-8 lg:grid-cols-5">
-
-        <!-- étape 1 -->
-        <div class="reveal relative">
-          <div class="relative z-10 grid place-items-center h-12 w-12 rounded-full glass font-display font-700 text-[17px]">
-            <span class="grad-text">01</span>
-          </div>
-          <h3 class="font-display font-600 text-[18px] mt-5">Découverte</h3>
-          <p class="text-[14px] text-mut mt-2 leading-relaxed">On cadre votre besoin, vos objectifs et le périmètre exact du projet.</p>
-        </div>
-
-        <!-- étape 2 -->
-        <div class="reveal relative">
-          <div class="relative z-10 grid place-items-center h-12 w-12 rounded-full glass font-display font-700 text-[17px]">
-            <span class="grad-text">02</span>
-          </div>
-          <h3 class="font-display font-600 text-[18px] mt-5">Prototype</h3>
-          <p class="text-[14px] text-mut mt-2 leading-relaxed">Une première maquette concrète pour valider la direction avant de coder.</p>
-        </div>
-
-        <!-- étape 3 -->
-        <div class="reveal relative">
-          <div class="relative z-10 grid place-items-center h-12 w-12 rounded-full glass font-display font-700 text-[17px]">
-            <span class="grad-text">03</span>
-          </div>
-          <h3 class="font-display font-600 text-[18px] mt-5">Développement</h3>
-          <p class="text-[14px] text-mut mt-2 leading-relaxed">Construction du produit avec du code propre, modulaire et documenté.</p>
-        </div>
-
-        <!-- étape 4 -->
-        <div class="reveal relative">
-          <div class="relative z-10 grid place-items-center h-12 w-12 rounded-full glass font-display font-700 text-[17px]">
-            <span class="grad-text">04</span>
-          </div>
-          <h3 class="font-display font-600 text-[18px] mt-5">Tests</h3>
-          <p class="text-[14px] text-mut mt-2 leading-relaxed">On vérifie tout : fonctionnement, vitesse, mobile et cas limites.</p>
-        </div>
-
-        <!-- étape 5 -->
-        <div class="reveal relative">
-          <div class="relative z-10 grid place-items-center h-12 w-12 rounded-full bg-gradient-to-br from-blue to-violet font-display font-700 text-[17px] text-white shadow-lg shadow-blue/30">
-            05
-          </div>
-          <h3 class="font-display font-600 text-[18px] mt-5">Livraison</h3>
-          <p class="text-[14px] text-mut mt-2 leading-relaxed">Mise en ligne, prise en main, et suivi pour faire évoluer le produit.</p>
-        </div>
-
+        <div class="reveal relative"><div class="relative z-10 grid place-items-center h-12 w-12 rounded-full glass font-display font-700 text-[17px]"><span class="grad-text">01</span></div><h3 class="font-display font-600 text-[18px] mt-5">Découverte</h3><p class="text-[14px] text-mut mt-2 leading-relaxed">On cadre votre besoin, vos objectifs et le périmètre exact du projet.</p></div>
+        <div class="reveal relative"><div class="relative z-10 grid place-items-center h-12 w-12 rounded-full glass font-display font-700 text-[17px]"><span class="grad-text">02</span></div><h3 class="font-display font-600 text-[18px] mt-5">Prototype</h3><p class="text-[14px] text-mut mt-2 leading-relaxed">Une première maquette concrète pour valider la direction avant de coder.</p></div>
+        <div class="reveal relative"><div class="relative z-10 grid place-items-center h-12 w-12 rounded-full glass font-display font-700 text-[17px]"><span class="grad-text">03</span></div><h3 class="font-display font-600 text-[18px] mt-5">Développement</h3><p class="text-[14px] text-mut mt-2 leading-relaxed">Construction du produit avec du code propre, modulaire et documenté.</p></div>
+        <div class="reveal relative"><div class="relative z-10 grid place-items-center h-12 w-12 rounded-full glass font-display font-700 text-[17px]"><span class="grad-text">04</span></div><h3 class="font-display font-600 text-[18px] mt-5">Tests</h3><p class="text-[14px] text-mut mt-2 leading-relaxed">On vérifie tout : fonctionnement, vitesse, mobile et cas limites.</p></div>
+        <div class="reveal relative"><div class="relative z-10 grid place-items-center h-12 w-12 rounded-full bg-gradient-to-br from-blue to-violet font-display font-700 text-[17px] text-white shadow-lg shadow-blue/30">05</div><h3 class="font-display font-600 text-[18px] mt-5">Livraison</h3><p class="text-[14px] text-mut mt-2 leading-relaxed">Mise en ligne, prise en main, et suivi pour faire évoluer le produit.</p></div>
       </div>
     </div>
   </div>
 </section>
-<!-- ============ TARIFS ============ -->
+
+<!-- TARIFS -->
 <section id="tarifs" class="relative py-28 border-t border-stroke">
   <div class="glow-blob" style="top:140px;left:50%;transform:translateX(-50%);width:600px;height:420px;background:#5a3bff;opacity:.18"></div>
-
   <div class="relative mx-auto max-w-7xl px-5">
     <div class="reveal max-w-2xl mx-auto text-center">
-      <div class="inline-flex items-center gap-2 text-[13px] text-blue font-600 mb-4">
-        <span class="h-px w-8 bg-blue"></span> TARIFS <span class="h-px w-8 bg-blue"></span>
-      </div>
-      <h2 class="font-display font-700 tracking-tight text-[36px] sm:text-[46px] leading-[1.05]">
-        Des prix clairs,<br>un <span class="grad-text">tarif de lancement.</span>
-      </h2>
-      <p class="mt-5 text-[17px] text-mut leading-relaxed">
-        Tarifs de lancement pour mes premiers projets. Chaque devis reste personnalisé selon votre besoin.
-      </p>
+      <div class="inline-flex items-center gap-2 text-[13px] text-blue font-600 mb-4"><span class="h-px w-8 bg-blue"></span> TARIFS <span class="h-px w-8 bg-blue"></span></div>
+      <h2 class="font-display font-700 tracking-tight text-[36px] sm:text-[46px] leading-[1.05]">Des prix clairs,<br>un <span class="grad-text">tarif de lancement.</span></h2>
+      <p class="mt-5 text-[17px] text-mut leading-relaxed">Tarifs de lancement pour mes premiers projets. Chaque devis reste personnalisé selon votre besoin.</p>
     </div>
-
     <div class="mt-16 grid lg:grid-cols-3 gap-6 items-start max-w-5xl mx-auto">
-
-      <!-- Essentiel -->
       <div class="reveal svc glass rounded-2xl p-7">
-        <h3 class="font-display font-600 text-[20px]">Essentiel</h3>
-        <p class="text-[13px] text-mut mt-1.5">Agent IA ou chatbot simple</p>
-        <div class="mt-5 flex items-baseline gap-1">
-          <span class="text-[14px] text-mut">dès</span>
-          <span class="font-display font-700 text-[38px]">1 490€</span>
-        </div>
-        <a href="#" class="mt-5 block text-center rounded-xl glass font-600 text-[14px] py-3 hover:bg-white/5 transition">Demander un devis</a>
-        <ul class="mt-6 space-y-3 text-[14px] text-mut">
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Chatbot FAQ entraîné sur vos infos</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Intégration sur votre site</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Ton &amp; réponses personnalisés</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Mise en ligne + prise en main</li>
-        </ul>
+        <h3 class="font-display font-600 text-[20px]">Essentiel</h3><p class="text-[13px] text-mut mt-1.5">Agent IA ou chatbot simple</p>
+        <div class="mt-5 flex items-baseline gap-1"><span class="text-[14px] text-mut">dès</span><span class="font-display font-700 text-[38px]">1 490€</span></div>
+        <a href="#contact" class="mt-5 block text-center rounded-xl glass font-600 text-[14px] py-3 hover:bg-white/5 transition">Demander un devis</a>
+        <ul class="mt-6 space-y-3 text-[14px] text-mut"><li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Chatbot FAQ entraîné sur vos infos</li><li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Intégration sur votre site</li><li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Ton &amp; réponses personnalisés</li><li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Mise en ligne + prise en main</li></ul>
       </div>
-
-      <!-- Pro (mis en avant) -->
       <div class="reveal relative rounded-2xl p-7 bg-gradient-to-b from-blue/15 to-violet/5 border border-blue/40 lg:scale-105 shadow-2xl shadow-blue/20">
         <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-blue to-violet px-3 py-1 text-[12px] font-600">Populaire</span>
-        <h3 class="font-display font-600 text-[20px]">Pro</h3>
-        <p class="text-[13px] text-mut mt-1.5">Agent IA avancé + automatisation</p>
-        <div class="mt-5 flex items-baseline gap-1">
-          <span class="text-[14px] text-mut">dès</span>
-          <span class="font-display font-700 text-[38px] grad-text">3 900€</span>
-        </div>
-        <a href="#" class="btn-glow mt-5 block text-center rounded-xl bg-gradient-to-r from-blue to-violet font-600 text-[14px] py-3">Demander un devis</a>
-        <ul class="mt-6 space-y-3 text-[14px] text-white/85">
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Agent IA avec base de connaissance (RAG)</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Connexion à vos outils (API, Stripe…)</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Automatisation d'un workflow métier</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Tableau de bord de suivi</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Support 30 jours inclus</li>
-        </ul>
+        <h3 class="font-display font-600 text-[20px]">Pro</h3><p class="text-[13px] text-mut mt-1.5">Agent IA avancé + automatisation</p>
+        <div class="mt-5 flex items-baseline gap-1"><span class="text-[14px] text-mut">dès</span><span class="font-display font-700 text-[38px] grad-text">3 900€</span></div>
+        <a href="#contact" class="btn-glow mt-5 block text-center rounded-xl bg-gradient-to-r from-blue to-violet font-600 text-[14px] py-3">Demander un devis</a>
+        <ul class="mt-6 space-y-3 text-[14px] text-white/85"><li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Agent IA avec base de connaissance (RAG)</li><li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Connexion à vos outils (API, Stripe…)</li><li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Automatisation d'un workflow métier</li><li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Tableau de bord de suivi</li><li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Support 30 jours inclus</li></ul>
       </div>
-
-      <!-- Sur-mesure -->
       <div class="reveal svc glass rounded-2xl p-7">
-        <h3 class="font-display font-600 text-[20px]">Sur-mesure</h3>
-        <p class="text-[13px] text-mut mt-1.5">SaaS complet &amp; systèmes IA</p>
-        <div class="mt-5 flex items-baseline gap-1">
-          <span class="font-display font-700 text-[38px]">Sur devis</span>
-        </div>
-        <a href="#" class="mt-5 block text-center rounded-xl glass font-600 text-[14px] py-3 hover:bg-white/5 transition">Discutons-en</a>
-        <ul class="mt-6 space-y-3 text-[14px] text-mut">
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Plateforme complète sur-mesure</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Auth, paiement, espace membre</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Temps réel &amp; gamification</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Architecture scalable</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Accompagnement long terme</li>
-        </ul>
+        <h3 class="font-display font-600 text-[20px]">Sur-mesure</h3><p class="text-[13px] text-mut mt-1.5">SaaS complet &amp; systèmes IA</p>
+        <div class="mt-5 flex items-baseline gap-1"><span class="font-display font-700 text-[38px]">Sur devis</span></div>
+        <a href="#contact" class="mt-5 block text-center rounded-xl glass font-600 text-[14px] py-3 hover:bg-white/5 transition">Discutons-en</a>
+        <ul class="mt-6 space-y-3 text-[14px] text-mut"><li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Plateforme complète sur-mesure</li><li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Auth, paiement, espace membre</li><li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Temps réel &amp; gamification</li><li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Architecture scalable</li><li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Accompagnement long terme</li></ul>
       </div>
-
     </div>
-
-    <p class="reveal mt-10 text-center text-[13px] text-mut">
-      Prix indicatifs de lancement. Le devis final dépend du périmètre exact de votre projet.
-    </p>
-  </div>
-</section>
-<!-- ============ TARIFS ============ -->
-<section id="tarifs" class="relative py-28 border-t border-stroke">
-  <div class="glow-blob" style="top:140px;left:50%;transform:translateX(-50%);width:600px;height:420px;background:#5a3bff;opacity:.18"></div>
-
-  <div class="relative mx-auto max-w-7xl px-5">
-    <div class="reveal max-w-2xl mx-auto text-center">
-      <div class="inline-flex items-center gap-2 text-[13px] text-blue font-600 mb-4">
-        <span class="h-px w-8 bg-blue"></span> TARIFS <span class="h-px w-8 bg-blue"></span>
-      </div>
-      <h2 class="font-display font-700 tracking-tight text-[36px] sm:text-[46px] leading-[1.05]">
-        Des prix clairs,<br>un <span class="grad-text">tarif de lancement.</span>
-      </h2>
-      <p class="mt-5 text-[17px] text-mut leading-relaxed">
-        Tarifs de lancement pour mes premiers projets. Chaque devis reste personnalisé selon votre besoin.
-      </p>
-    </div>
-
-    <div class="mt-16 grid lg:grid-cols-3 gap-6 items-start max-w-5xl mx-auto">
-
-      <!-- Essentiel -->
-      <div class="reveal svc glass rounded-2xl p-7">
-        <h3 class="font-display font-600 text-[20px]">Essentiel</h3>
-        <p class="text-[13px] text-mut mt-1.5">Agent IA ou chatbot simple</p>
-        <div class="mt-5 flex items-baseline gap-1">
-          <span class="text-[14px] text-mut">dès</span>
-          <span class="font-display font-700 text-[38px]">1 490€</span>
-        </div>
-        <a href="#" class="mt-5 block text-center rounded-xl glass font-600 text-[14px] py-3 hover:bg-white/5 transition">Demander un devis</a>
-        <ul class="mt-6 space-y-3 text-[14px] text-mut">
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Chatbot FAQ entraîné sur vos infos</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Intégration sur votre site</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Ton &amp; réponses personnalisés</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Mise en ligne + prise en main</li>
-        </ul>
-      </div>
-
-      <!-- Pro (mis en avant) -->
-      <div class="reveal relative rounded-2xl p-7 bg-gradient-to-b from-blue/15 to-violet/5 border border-blue/40 lg:scale-105 shadow-2xl shadow-blue/20">
-        <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-blue to-violet px-3 py-1 text-[12px] font-600">Populaire</span>
-        <h3 class="font-display font-600 text-[20px]">Pro</h3>
-        <p class="text-[13px] text-mut mt-1.5">Agent IA avancé + automatisation</p>
-        <div class="mt-5 flex items-baseline gap-1">
-          <span class="text-[14px] text-mut">dès</span>
-          <span class="font-display font-700 text-[38px] grad-text">3 900€</span>
-        </div>
-        <a href="#" class="btn-glow mt-5 block text-center rounded-xl bg-gradient-to-r from-blue to-violet font-600 text-[14px] py-3">Demander un devis</a>
-        <ul class="mt-6 space-y-3 text-[14px] text-white/85">
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Agent IA avec base de connaissance (RAG)</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Connexion à vos outils (API, Stripe…)</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Automatisation d'un workflow métier</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Tableau de bord de suivi</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Support 30 jours inclus</li>
-        </ul>
-      </div>
-
-      <!-- Sur-mesure -->
-      <div class="reveal svc glass rounded-2xl p-7">
-        <h3 class="font-display font-600 text-[20px]">Sur-mesure</h3>
-        <p class="text-[13px] text-mut mt-1.5">SaaS complet &amp; systèmes IA</p>
-        <div class="mt-5 flex items-baseline gap-1">
-          <span class="font-display font-700 text-[38px]">Sur devis</span>
-        </div>
-        <a href="#" class="mt-5 block text-center rounded-xl glass font-600 text-[14px] py-3 hover:bg-white/5 transition">Discutons-en</a>
-        <ul class="mt-6 space-y-3 text-[14px] text-mut">
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Plateforme complète sur-mesure</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Auth, paiement, espace membre</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Temps réel &amp; gamification</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Architecture scalable</li>
-          <li class="flex gap-2.5"><span class="text-blue mt-0.5">✓</span> Accompagnement long terme</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <p class="reveal mt-10 text-center text-[13px] text-mut">
-      Prix indicatifs de lancement. Le devis final dépend du périmètre exact de votre projet.
-    </p>
+    <p class="reveal mt-10 text-center text-[13px] text-mut">Prix indicatifs de lancement. Le devis final dépend du périmètre exact de votre projet.</p>
   </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
+<!-- FAQ -->
+<section id="faq" class="relative py-28 border-t border-stroke">
+  <div class="relative mx-auto max-w-3xl px-5">
+    <div class="reveal text-center max-w-2xl mx-auto">
+      <div class="inline-flex items-center gap-2 text-[13px] text-blue font-600 mb-4"><span class="h-px w-8 bg-blue"></span> FAQ <span class="h-px w-8 bg-blue"></span></div>
+      <h2 class="font-display font-700 tracking-tight text-[36px] sm:text-[46px] leading-[1.05]">Vos questions,<br>nos <span class="grad-text">réponses claires.</span></h2>
+    </div>
+    <div id="faq-list" class="mt-12 space-y-3"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="relative py-28 border-t border-stroke">
+  <div class="glow-blob" style="top:100px;left:10%;width:480px;height:400px;background:#3b5bff;opacity:.18"></div>
+  <div class="relative mx-auto max-w-5xl px-5 grid lg:grid-cols-[1fr_1.1fr] gap-12 items-start">
+    <div class="reveal">
+      <div class="inline-flex items-center gap-2 text-[13px] text-blue font-600 mb-4"><span class="h-px w-8 bg-blue"></span> CONTACT</div>
+      <h2 class="font-display font-700 tracking-tight text-[34px] sm:text-[42px] leading-[1.05]">Parlons de<br>votre <span class="grad-text">projet.</span></h2>
+      <p class="mt-5 text-[16px] text-mut leading-relaxed">Décrivez votre besoin, je vous réponds rapidement avec une première estimation — sans engagement.</p>
+      <div class="mt-8 space-y-3">
+        <a href="mailto:contact@velorax.io" class="flex items-center gap-3 rounded-xl glass px-4 py-3.5 hover:bg-white/5 transition"><span class="grid place-items-center h-9 w-9 rounded-lg bg-blue/15 text-blue"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="text-[14px]">contact@velorax.io</span></a>
+        <a href="https://wa.me/33600000000" target="_blank" rel="noopener" class="flex items-center gap-3 rounded-xl glass px-4 py-3.5 hover:bg-white/5 transition"><span class="grid place-items-center h-9 w-9 rounded-lg bg-green-500/15 text-green-400"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.9.9-2.8-.2-.3A8 8 0 1 1 12 20z"/></svg></span><span class="text-[14px]">WhatsApp</span></a>
+        <a href="https://calendly.com/votre-lien" target="_blank" rel="noopener" class="flex items-center gap-3 rounded-xl glass px-4 py-3.5 hover:bg-white/5 transition"><span class="grid place-items-center h-9 w-9 rounded-lg bg-violet/15 text-violet"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span><span class="text-[14px]">Réserver un créneau</span></a>
+      </div>
+    </div>
+    <div class="reveal glass rounded-2xl p-6 sm:p-8">
+      <form id="contact-form" action="https://formspree.io/f/VOTRE_ID" method="POST" class="space-y-4">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <input class="field" type="text" name="nom" placeholder="Votre nom" required />
+          <input class="field" type="email" name="email" placeholder="Votre email" required />
+        </div>
+        <select class="field" name="projet" required>
+          <option value="" disabled selected>Type de projet</option>
+          <option>Agent IA / chatbot</option><option>Automatisation IA</option><option>SaaS sur-mesure</option><option>Site / boutique en ligne</option><option>Autre</option>
+        </select>
+        <select class="field" name="budget">
+          <option value="" disabled selected>Budget estimé (optionnel)</option>
+          <option>Moins de 1 000€</option><option>1 000€ – 3 000€</option><option>3 000€ – 8 000€</option><option>Plus de 8 000€</option><option>Je ne sais pas encore</option>
+        </select>
+        <textarea class="field" name="message" rows="4" placeholder="Décrivez votre projet en quelques mots…" required></textarea>
+        <button type="submit" class="btn-glow w-full rounded-xl bg-gradient-to-r from-blue to-violet font-600 text-[15px] py-3.5">Envoyer ma demande</button>
+        <p id="form-status" class="text-[13px] text-center text-mut min-h-[20px]"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="relative py-28">
+  <div class="relative mx-auto max-w-5xl px-5">
+    <div class="reveal relative overflow-hidden rounded-3xl glass p-10 sm:p-16 text-center">
+      <div class="glow-blob" style="top:-80px;left:20%;width:380px;height:380px;background:#3b5bff;opacity:.4"></div>
+      <div class="glow-blob" style="bottom:-100px;right:15%;width:420px;height:420px;background:#7c3bff;opacity:.35"></div>
+      <div class="absolute inset-0 bg-grid opacity-40"></div>
+      <div class="relative">
+        <h2 class="font-display font-800 tracking-tight text-[34px] sm:text-[52px] leading-[1.05]">Transformons votre idée<br>en <span class="grad-text">produit moderne.</span></h2>
+        <p class="mt-6 max-w-xl mx-auto text-[17px] text-mut leading-relaxed">Parlons de votre projet. Un échange gratuit, sans engagement, pour voir ce qu'on peut construire ensemble.</p>
+        <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
+          <a href="#contact" class="btn-glow inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue to-violet font-600 text-[15px] px-7 py-4">Réserver un appel gratuit<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="#contact" class="inline-flex items-center gap-2 rounded-xl glass font-600 text-[15px] px-7 py-4 hover:bg-white/5 transition">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="relative border-t border-stroke pt-16 pb-8">
   <div class="mx-auto max-w-7xl px-5">
     <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-
-      <!-- marque -->
       <div class="lg:col-span-1">
-        <div class="flex items-center gap-2.5">
-          <span class="grid place-items-center h-9 w-9 rounded-xl bg-gradient-to-br from-blue to-violet">
-            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l8 16 8-16"/></svg>
-          </span>
-          <span class="font-display font-700 text-[17px]">VeloraX<span class="text-mut font-500"> Labs</span></span>
-        </div>
-        <p class="mt-4 text-[14px] text-mut leading-relaxed max-w-xs">
-          Agents IA &amp; SaaS sur-mesure. Du code propre, jamais de template.
-        </p>
+        <div class="flex items-center gap-2.5"><span class="grid place-items-center h-9 w-9 rounded-xl bg-gradient-to-br from-blue to-violet"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l8 16 8-16"/></svg></span><span class="font-display font-700 text-[17px]">VeloraX<span class="text-mut font-500"> Labs</span></span></div>
+        <p class="mt-4 text-[14px] text-mut leading-relaxed max-w-xs">Agents IA &amp; SaaS sur-mesure. Du code propre, jamais de template.</p>
         <div class="mt-5 flex gap-2.5">
-          <a href="#" aria-label="X" class="grid place-items-center h-9 w-9 rounded-lg glass hover:bg-white/5 transition">
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7 8 8.3 12h-6.5l-5-7-5.8 7H2.7l7.6-9L2 2h6.6l4.6 6.4L18.9 2z"/></svg>
-          </a>
-          <a href="#" aria-label="LinkedIn" class="grid place-items-center h-9 w-9 rounded-lg glass hover:bg-white/5 transition">
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.5 8h4V24h-4V8zM8 8h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4 0 4.75 2.65 4.75 6.1V24h-4v-7.1c0-1.7-.03-3.9-2.38-3.9s-2.74 1.85-2.74 3.77V24H8V8z"/></svg>
-          </a>
-          <a href="#" aria-label="WhatsApp" class="grid place-items-center h-9 w-9 rounded-lg glass hover:bg-white/5 transition">
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.9.9-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.2 0-.3 0-.5s-.5-1.3-.7-1.7-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3A3 3 0 0 0 6.5 9c0 1.8 1.3 3.5 1.5 3.8s2.6 4 6.3 5.3c2.2.8 2.6.6 3.1.6s1.4-.6 1.6-1.1.2-1 .1-1.1-.2-.2-.4-.3z"/></svg>
-          </a>
+          <a href="#" aria-label="X" class="grid place-items-center h-9 w-9 rounded-lg glass hover:bg-white/5 transition"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7 8 8.3 12h-6.5l-5-7-5.8 7H2.7l7.6-9L2 2h6.6l4.6 6.4L18.9 2z"/></svg></a>
+          <a href="#" aria-label="LinkedIn" class="grid place-items-center h-9 w-9 rounded-lg glass hover:bg-white/5 transition"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.5 8h4V24h-4V8zM8 8h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4 0 4.75 2.65 4.75 6.1V24h-4v-7.1c0-1.7-.03-3.9-2.38-3.9s-2.74 1.85-2.74 3.77V24H8V8z"/></svg></a>
+          <a href="https://wa.me/33600000000" aria-label="WhatsApp" class="grid place-items-center h-9 w-9 rounded-lg glass hover:bg-white/5 transition"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.9.9-2.8-.2-.3A8 8 0 1 1 12 20z"/></svg></a>
         </div>
       </div>
-
-      <!-- liens -->
-      <div>
-        <h4 class="font-600 text-[14px] mb-4">Services</h4>
-        <ul class="space-y-2.5 text-[14px] text-mut">
-          <li><a href="#services" class="hover:text-white transition">Agents IA</a></li>
-          <li><a href="#services" class="hover:text-white transition">Automatisations</a></li>
-          <li><a href="#services" class="hover:text-white transition">SaaS sur-mesure</a></li>
-          <li><a href="#services" class="hover:text-white transition">Dashboards</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-600 text-[14px] mb-4">Navigation</h4>
-        <ul class="space-y-2.5 text-[14px] text-mut">
-          <li><a href="#realisations" class="hover:text-white transition">Réalisations</a></li>
-          <li><a href="#methode" class="hover:text-white transition">Méthode</a></li>
-          <li><a href="#tarifs" class="hover:text-white transition">Tarifs</a></li>
-          <li><a href="#faq" class="hover:text-white transition">FAQ</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-600 text-[14px] mb-4">Contact</h4>
-        <ul class="space-y-2.5 text-[14px] text-mut">
-          <li><a href="mailto:contact@velorax.io" class="hover:text-white transition">contact@velorax.io</a></li>
-          <li><a href="#" class="hover:text-white transition">WhatsApp</a></li>
-          <li><a href="#" class="hover:text-white transition">Réserver un appel</a></li>
-        </ul>
-      </div>
+      <div><h4 class="font-600 text-[14px] mb-4">Services</h4><ul class="space-y-2.5 text-[14px] text-mut"><li><a href="#services" class="hover:text-white transition">Agents IA</a></li><li><a href="#services" class="hover:text-white transition">Automatisations</a></li><li><a href="#services" class="hover:text-white transition">SaaS sur-mesure</a></li><li><a href="#services" class="hover:text-white transition">Dashboards</a></li></ul></div>
+      <div><h4 class="font-600 text-[14px] mb-4">Navigation</h4><ul class="space-y-2.5 text-[14px] text-mut"><li><a href="#realisations" class="hover:text-white transition">Réalisations</a></li><li><a href="#methode" class="hover:text-white transition">Méthode</a></li><li><a href="#tarifs" class="hover:text-white transition">Tarifs</a></li><li><a href="#faq" class="hover:text-white transition">FAQ</a></li></ul></div>
+      <div><h4 class="font-600 text-[14px] mb-4">Contact</h4><ul class="space-y-2.5 text-[14px] text-mut"><li><a href="mailto:contact@velorax.io" class="hover:text-white transition">contact@velorax.io</a></li><li><a href="https://wa.me/33600000000" class="hover:text-white transition">WhatsApp</a></li><li><a href="#contact" class="hover:text-white transition">Réserver un appel</a></li></ul></div>
     </div>
-
     <div class="mt-12 pt-6 border-t border-stroke flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-mut">
       <p>© 2026 VeloraX Labs — Tous droits réservés.</p>
-      <div class="flex gap-5">
-        <a href="#" class="hover:text-white transition">Mentions légales</a>
-        <a href="#" class="hover:text-white transition">Confidentialité</a>
-      </div>
+      <div class="flex gap-5"><a href="#" class="hover:text-white transition">Mentions légales</a><a href="#" class="hover:text-white transition">Confidentialité</a></div>
     </div>
   </div>
 </footer>
 
-
 <script>
-  /* Curseur lumineux */
-  const glow = document.getElementById('cursor-glow');
-  window.addEventListener('mousemove', e => { glow.style.opacity=1; glow.style.left=e.clientX+'px'; glow.style.top=e.clientY+'px'; });
-
-  /* Menu mobile */
-  const burger=document.getElementById('burger'), menu=document.getElementById('mobile-menu');
+  /* curseur */
+  const glow=document.getElementById('cursor-glow');
+  window.addEventListener('mousemove',e=>{glow.style.opacity=1;glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px';});
+  /* menu mobile */
+  const burger=document.getElementById('burger'),menu=document.getElementById('mobile-menu');
   burger.addEventListener('click',()=>menu.classList.toggle('hidden'));
   menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.add('hidden')));
-
-  /* Reveal au scroll */
+  /* reveal */
   const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}})},{threshold:0.12});
   document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4)*0.08+'s';io.observe(el);});
-
-  /* Tags marquee */
+  /* tags */
   const tags=['Agents IA','Automatisation','SaaS','Chatbots','Dashboards','Temps réel','Espace membre','Stripe','API IA','Workflows','OCR','Supabase','Notifications','Gamification','SEO'];
   const pill=t=>'<span class="rounded-full glass px-4 py-2 text-[14px] text-mut whitespace-nowrap">'+t+'</span>';
   document.getElementById('tagset').innerHTML=tags.map(pill).join('');
   document.getElementById('tagset2').innerHTML=tags.map(pill).join('');
-
-  /* Cartes services — recentrées IA + SaaS */
+  /* services */
   const services=[
     {t:'Agents IA',d:'Assistants métiers et chatbots qui répondent, qualifient et trient automatiquement.',tech:'LLM · RAG',icon:'<circle cx="12" cy="12" r="3.2"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/>'},
     {t:'Automatisations IA',d:'Workflows qui bossent pour vous : emails, résumés, OCR, traitement de documents.',tech:'API · Webhooks',icon:'<path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4"/>'},
@@ -807,51 +437,69 @@ spline-viewer { width:100%; height:100%; display:block; }
     {t:'Intégrations & API',d:'On connecte vos outils entre eux et on branche l\u0027IA là où elle fait gagner du temps.',tech:'REST · OpenAI',icon:'<path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/>'},
   ];
   const svgWrap=i=>'<svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">'+i+'</svg>';
-  document.getElementById('svc-grid').innerHTML=services.map(s=>`
-    <div class="svc reveal glass rounded-2xl p-6">
-      <span class="grid place-items-center h-12 w-12 rounded-xl bg-gradient-to-br from-blue/20 to-violet/20 text-white border border-stroke">${svgWrap(s.icon)}</span>
-      <h3 class="font-display font-600 text-[19px] mt-5">${s.t}</h3>
-      <p class="text-[14px] text-mut mt-2 leading-relaxed">${s.d}</p>
-      <div class="mt-5 flex items-center justify-between">
-        <span class="text-[12px] text-mut">${s.tech}</span>
-        <span class="inline-flex items-center gap-1 text-[13px] text-white/80 group cursor-pointer">Voir plus
-          <svg class="h-3.5 w-3.5 transition group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </span>
-      </div>
-    </div>`).join('');
+  document.getElementById('svc-grid').innerHTML=services.map(s=>'<div class="svc reveal glass rounded-2xl p-6"><span class="grid place-items-center h-12 w-12 rounded-xl bg-gradient-to-br from-blue/20 to-violet/20 text-white border border-stroke">'+svgWrap(s.icon)+'</span><h3 class="font-display font-600 text-[19px] mt-5">'+s.t+'</h3><p class="text-[14px] text-mut mt-2 leading-relaxed">'+s.d+'</p><div class="mt-5 flex items-center justify-between"><span class="text-[12px] text-mut">'+s.tech+'</span><a href="#contact" class="inline-flex items-center gap-1 text-[13px] text-white/80 group">Voir plus<svg class="h-3.5 w-3.5 transition group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>').join('');
   document.querySelectorAll('#svc-grid .reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*0.08+'s';io.observe(el);});
-
-  /* ===== Démo agent IA : effet de frappe en boucle ===== */
-  const chat=document.getElementById('chat');
-  const script=[
-    {who:'user', text:'Vous pouvez automatiser le support client ?'},
-    {who:'bot',  text:'Oui. On déploie un agent qui répond 24/7, trie les demandes et transmet les cas complexes à votre équipe.'},
-    {who:'user', text:'Et brancher mon Stripe + ma base ?'},
-    {who:'bot',  text:'Absolument — paiement, base de données et notifications, le tout connecté et en temps réel.'},
+  /* faq */
+  const faqs=[
+    {q:"Quels sont les délais ?",a:"Un agent IA simple se livre en quelques jours. Un SaaS sur-mesure prend plus de temps : on fixe ensemble un planning clair dès la phase de découverte."},
+    {q:"Comment se passe le paiement ?",a:"Généralement un acompte au démarrage, puis le solde à la livraison. Pour les gros projets, on peut découper en plusieurs étapes."},
+    {q:"Et la maintenance ?",a:"Le support des premiers jours est inclus. Ensuite je propose un suivi optionnel pour faire évoluer votre produit sereinement."},
+    {q:"Je peux demander des modifications ?",a:"Oui. On valide ensemble à chaque étape (prototype, dev, tests) pour éviter les mauvaises surprises et ajuster en cours de route."},
+    {q:"L'hébergement est-il inclus ?",a:"Je vous oriente vers les meilleures solutions (Vercel, Supabase…) et je m'occupe de la mise en ligne. Les coûts d'hébergement restent à votre charge, souvent gratuits au démarrage."},
+    {q:"Mes données sont-elles en sécurité ?",a:"Oui. J'utilise des outils sérieux (Supabase, Stripe) et les bonnes pratiques de sécurité dès la conception."},
   ];
-  const userBubble=t=>'<div class="flex justify-end"><div class="max-w-[80%] rounded-2xl rounded-br-md bg-white/10 px-3.5 py-2.5">'+t+'</div></div>';
-  const botBubble=t=>'<div class="flex justify-start"><div class="max-w-[82%] rounded-2xl rounded-bl-md bg-gradient-to-br from-blue/25 to-violet/20 border border-stroke px-3.5 py-2.5">'+t+'</div></div>';
+  const fwrap=document.getElementById('faq-list');
+  fwrap.innerHTML=faqs.map(f=>'<div class="faq-item glass rounded-2xl overflow-hidden"><button class="faq-q w-full flex items-center justify-between gap-4 text-left px-5 py-4"><span class="font-500 text-[16px]">'+f.q+'</span><span class="faq-ico shrink-0 grid place-items-center h-7 w-7 rounded-full glass transition-transform"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .35s ease"><p class="px-5 pb-5 text-[15px] text-mut leading-relaxed">'+f.a+'</p></div></div>').join('');
+  fwrap.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const item=btn.parentElement,ans=item.querySelector('.faq-a'),ico=item.querySelector('.faq-ico');
+      const isOpen=ans.style.maxHeight&&ans.style.maxHeight!=='0px';
+      fwrap.querySelectorAll('.faq-a').forEach(a=>a.style.maxHeight='0px');
+      fwrap.querySelectorAll('.faq-ico').forEach(i=>i.style.transform='');
+      if(!isOpen){ans.style.maxHeight=ans.scrollHeight+'px';ico.style.transform='rotate(45deg)';}
+    });
+  });
+  /* filtres projets */
+  (function(){
+    const btns=document.querySelectorAll('#filters .filter-btn'),cards=document.querySelectorAll('#proj-grid .proj');
+    btns.forEach(b=>b.addEventListener('click',()=>{
+      btns.forEach(x=>{x.classList.remove('bg-white','text-ink');x.classList.add('glass','text-mut');});
+      b.classList.add('bg-white','text-ink');b.classList.remove('glass','text-mut');
+      const f=b.dataset.f;
+      cards.forEach(c=>{c.style.display=(f==='all'||c.dataset.cat===f)?'':'none';});
+    }));
+  })();
+  /* formulaire contact (Formspree) */
+  const form=document.getElementById('contact-form');
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const status=document.getElementById('form-status');
+    status.textContent='Envoi en cours…';status.className='text-[13px] text-center text-mut min-h-[20px]';
+    try{
+      const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      if(res.ok){form.reset();status.textContent='Merci ! Votre message a bien été envoyé, je vous réponds vite.';status.className='text-[13px] text-center text-green-400 min-h-[20px]';}
+      else{status.textContent="Oups, une erreur est survenue. Écrivez-moi directement par email.";status.className='text-[13px] text-center text-red-400 min-h-[20px]';}
+    }catch(err){status.textContent="Erreur réseau. Réessayez ou écrivez-moi directement.";status.className='text-[13px] text-center text-red-400 min-h-[20px]';}
+  });
+  /* démo agent IA */
+  const chat=document.getElementById('chat');
+  const sc=[
+    {who:'user',text:'Vous pouvez automatiser le support client ?'},
+    {who:'bot',text:'Oui. On déploie un agent qui répond 24/7, trie les demandes et transmet les cas complexes à votre équipe.'},
+    {who:'user',text:'Et brancher mon Stripe + ma base ?'},
+    {who:'bot',text:'Absolument — paiement, base de données et notifications, le tout connecté et en temps réel.'},
+  ];
+  const ub=t=>'<div class="flex justify-end"><div class="max-w-[80%] rounded-2xl rounded-br-md bg-white/10 px-3.5 py-2.5">'+t+'</div></div>';
+  const bb=t=>'<div class="flex justify-start"><div class="max-w-[82%] rounded-2xl rounded-bl-md bg-gradient-to-br from-blue/25 to-violet/20 border border-stroke px-3.5 py-2.5">'+t+'</div></div>';
   const typing='<div class="flex justify-start"><div class="rounded-2xl rounded-bl-md bg-white/5 border border-stroke px-3.5 py-3"><span class="dot"></span> <span class="dot"></span> <span class="dot"></span></div></div>';
   const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-
-  async function typeText(el,text){
-    for(let i=0;i<text.length;i++){ el.textContent=text.slice(0,i+1); await sleep(18); }
-  }
+  async function typeText(el,text){for(let i=0;i<text.length;i++){el.textContent=text.slice(0,i+1);await sleep(18);}}
   async function runChat(){
     while(true){
       chat.innerHTML='';
-      for(const m of script){
-        if(m.who==='user'){
-          chat.insertAdjacentHTML('beforeend', userBubble(m.text));
-          await sleep(700);
-        } else {
-          chat.insertAdjacentHTML('beforeend', typing);
-          const t=chat.lastElementChild; await sleep(900); t.remove();
-          chat.insertAdjacentHTML('beforeend', botBubble(''));
-          const bubble=chat.lastElementChild.querySelector('div');
-          await typeText(bubble, m.text);
-          await sleep(800);
-        }
+      for(const m of sc){
+        if(m.who==='user'){chat.insertAdjacentHTML('beforeend',ub(m.text));await sleep(700);}
+        else{chat.insertAdjacentHTML('beforeend',typing);const t=chat.lastElementChild;await sleep(900);t.remove();chat.insertAdjacentHTML('beforeend',bb(''));const bubble=chat.lastElementChild.querySelector('div');await typeText(bubble,m.text);await sleep(800);}
         chat.scrollTop=chat.scrollHeight;
       }
       await sleep(2600);
