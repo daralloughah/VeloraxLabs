@@ -169,9 +169,14 @@
 
 <!-- ============ HERO ============ -->
 <section class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
-  <div class="absolute inset-0 bg-grid"></div>
-  <div class="glow-blob" style="top:-120px;left:8%;width:520px;height:520px;background:#3b5bff"></div>
-  <div class="glow-blob" style="top:120px;right:0;width:560px;height:560px;background:#7c3bff"></div>
+  <!-- fond Spline (desktop uniquement) -->
+  <div id="spline-bg" class="absolute inset-0 hidden lg:block pointer-events-none opacity-70">
+    <spline-viewer url="https://prod.spline.design/hrOEwKLPkdRdKpW8/scene.splinecode" loading="lazy"></spline-viewer>
+  </div>
+  <!-- fond de secours (mobile + pendant le chargement) -->
+  <div class="absolute inset-0 bg-grid lg:opacity-30"></div>
+  <div class="glow-blob lg:hidden" style="top:-120px;left:8%;width:520px;height:520px;background:#3b5bff"></div>
+  <div class="glow-blob lg:hidden" style="top:120px;right:0;width:560px;height:560px;background:#7c3bff"></div>
   <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink to-transparent"></div>
 
   <div class="relative mx-auto max-w-7xl px-5 grid lg:grid-cols-[1.05fr_1fr] gap-14 items-center w-full">
