@@ -171,7 +171,14 @@
           </div>
           <span class="text-[11px] text-mut">démo</span>
         </div>
-        <div id="chat" class="p-4 space-y-3 min-h-[260px] text-[14px]"></div>
+        <div id="chat" class="p-4 space-y-3 min-h-[260px] max-h-[320px] overflow-y-auto text-[14px]"></div>
+<div class="flex items-center gap-2 px-4 pb-4">
+  <input id="chat-input" class="field" type="text" placeholder="Posez votre question…" />
+  <button id="chat-send" class="btn-glow shrink-0 grid place-items-center h-10 w-10 rounded-xl bg-gradient-to-br from-blue to-violet">
+    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </button>
+</div>
+
       </div>
       <div class="floatB absolute -left-6 bottom-6 hidden sm:block glass rounded-xl p-3.5 w-56 shadow-xl">
         <div class="text-[12px] font-600 mb-2.5 flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-violet"></span> Workflow automatisé</div>
@@ -480,31 +487,47 @@
       else{status.textContent="Oups, une erreur est survenue. Écrivez-moi directement par email.";status.className='text-[13px] text-center text-red-400 min-h-[20px]';}
     }catch(err){status.textContent="Erreur réseau. Réessayez ou écrivez-moi directement.";status.className='text-[13px] text-center text-red-400 min-h-[20px]';}
   });
-  /* démo agent IA */
-  const chat=document.getElementById('chat');
-  const sc=[
-    {who:'user',text:'Vous pouvez automatiser le support client ?'},
-    {who:'bot',text:'Oui. On déploie un agent qui répond 24/7, trie les demandes et transmet les cas complexes à votre équipe.'},
-    {who:'user',text:'Et brancher mon Stripe + ma base ?'},
-    {who:'bot',text:'Absolument — paiement, base de données et notifications, le tout connecté et en temps réel.'},
-  ];
-  const ub=t=>'<div class="flex justify-end"><div class="max-w-[80%] rounded-2xl rounded-br-md bg-white/10 px-3.5 py-2.5">'+t+'</div></div>';
-  const bb=t=>'<div class="flex justify-start"><div class="max-w-[82%] rounded-2xl rounded-bl-md bg-gradient-to-br from-blue/25 to-violet/20 border border-stroke px-3.5 py-2.5">'+t+'</div></div>';
-  const typing='<div class="flex justify-start"><div class="rounded-2xl rounded-bl-md bg-white/5 border border-stroke px-3.5 py-3"><span class="dot"></span> <span class="dot"></span> <span class="dot"></span></div></div>';
-  const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-  async function typeText(el,text){for(let i=0;i<text.length;i++){el.textContent=text.slice(0,i+1);await sleep(18);}}
-  async function runChat(){
-    while(true){
-      chat.innerHTML='';
-      for(const m of sc){
-        if(m.who==='user'){chat.insertAdjacentHTML('beforeend',ub(m.text));await sleep(700);}
-        else{chat.insertAdjacentHTML('beforeend',typing);const t=chat.lastElementChild;await sleep(900);t.remove();chat.insertAdjacentHTML('beforeend',bb(''));const bubble=chat.lastElementChild.querySelector('div');await typeText(bubble,m.text);await sleep(800);}
-        chat.scrollTop=chat.scrollHeight;
-      }
-      await sleep(2600);
-    }
+  /* agent IA chat */
+const chat = document.getElementById('chat');
+const input = document.getElementById('chat-input');
+const sendBtn = document.getElementById('chat-send');
+const FN_URL = "https://valswafwmjbamttogbfe.supabase.co/functions/v1/chat";
+
+const ub = t => '<div class="flex justify-end"><div class="max-w-[80%] rounded-2xl rounded-br-md bg-white/10 px-3.5 py-2.5">'+t+'</div></div>';
+const bb = t => '<div class="flex justify-start"><div class="max-w-[82%] rounded-2xl rounded-bl-md bg-gradient-to-br from-blue/25 to-violet/20 border border-stroke px-3.5 py-2.5">'+t+'</div></div>';
+const typing = '<div class="flex justify-start"><div class="rounded-2xl rounded-bl-md bg-white/5 border border-stroke px-3.5 py-3"><span class="dot"></span> <span class="dot"></span> <span class="dot"></span></div></div>';
+const esc = s => s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+chat.innerHTML = bb("Bonjour 👋 Je suis l'agent VeloraX. Une question sur nos services ?");
+
+async function sendMessage(){
+  const text = input.value.trim();
+  if(!text) return;
+  input.value = '';
+  chat.insertAdjacentHTML('beforeend', ub(esc(text)));
+  chat.insertAdjacentHTML('beforeend', typing);
+  const typingEl = chat.lastElementChild;
+  chat.scrollTop = chat.scrollHeight;
+  try{
+    const res = await fetch(FN_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: text })
+    });
+    const data = await res.json();
+    typingEl.remove();
+    const reply = data.reply || "Désolé, une erreur est survenue.";
+    chat.insertAdjacentHTML('beforeend', bb(esc(reply)));
+  }catch(err){
+    typingEl.remove();
+    chat.insertAdjacentHTML('beforeend', bb("Erreur réseau, réessayez."));
   }
-  runChat();
+  chat.scrollTop = chat.scrollHeight;
+}
+
+sendBtn.addEventListener('click', sendMessage);
+input.addEventListener('keydown', e => { if(e.key === 'Enter') sendMessage(); });
+
 </script>
 </body>
 </html>
